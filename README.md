@@ -24,6 +24,8 @@ Bundler 2.0.1
 ## カタログ設計
 https://docs.google.com/spreadsheets/d/1h2jP8d2TZmoGTXND2FDhBYhLG0hpsnxJaMOfGUH_wNY/edit#gid=0
 
+## ER図
+https://docs.google.com/spreadsheets/d/11wuVuNT3d7YFZFZ46aXI-vLIzJgs8-Pb5Q-zsPoQM5I/edit#gid=1833524702
 
 ## テーブル定義
 https://docs.google.com/spreadsheets/d/11wuVuNT3d7YFZFZ46aXI-vLIzJgs8-Pb5Q-zsPoQM5I/edit#gid=1833524702
