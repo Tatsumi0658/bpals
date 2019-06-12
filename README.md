@@ -65,3 +65,7 @@ https://docs.google.com/spreadsheets/d/1x8WiuGDJbE1Kk0_UgVT8uheIP51GfY5AgkO6UNF-
 devise  
 omniauth  
 carrierwave  
+ransack  
+capistrano  
+unicorn  
+minimagick   
