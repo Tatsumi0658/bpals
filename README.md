@@ -46,20 +46,21 @@ rails 5.2.2
 Bundler 2.0.1  
 
 
-## カタログ設計
-https://docs.google.com/spreadsheets/d/1h2jP8d2TZmoGTXND2FDhBYhLG0hpsnxJaMOfGUH_wNY/edit#gid=0
+## カタログ設計  
 
-## ER図
-https://docs.google.com/spreadsheets/d/11wuVuNT3d7YFZFZ46aXI-vLIzJgs8-Pb5Q-zsPoQM5I/edit#gid=1833524702
+https://docs.google.com/spreadsheets/d/1h2jP8d2TZmoGTXND2FDhBYhLG0hpsnxJaMOfGUH_wNY/edit?usp=sharing
 
-## テーブル定義
-https://docs.google.com/spreadsheets/d/11wuVuNT3d7YFZFZ46aXI-vLIzJgs8-Pb5Q-zsPoQM5I/edit#gid=1833524702
+## テーブル設計  
 
-## 画面遷移図
-https://docs.google.com/spreadsheets/d/1tSL0fZqPIx14sMkYiZjrP9hPmvOQGmfBDfah3HHQ3Lc/edit#gid=0
+https://docs.google.com/spreadsheets/d/11wuVuNT3d7YFZFZ46aXI-vLIzJgs8-Pb5Q-zsPoQM5I/edit?usp=sharing
 
-## ワイヤーフレーム
-https://docs.google.com/spreadsheets/d/1x8WiuGDJbE1Kk0_UgVT8uheIP51GfY5AgkO6UNF-O1o/edit#gid=0
+## 画面遷移図  
+
+https://docs.google.com/spreadsheets/d/1tSL0fZqPIx14sMkYiZjrP9hPmvOQGmfBDfah3HHQ3Lc/edit?usp=sharing
+
+## ワイヤーフレーム  
+
+https://docs.google.com/spreadsheets/d/1x8WiuGDJbE1Kk0_UgVT8uheIP51GfY5AgkO6UNF-O1o/edit?usp=sharing
 
 ## gem
 devise  
