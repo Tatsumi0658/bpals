@@ -12,7 +12,7 @@ module Bpals
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     config.i18n.default_locale = :ja
-    config.generators.template_engine = :slim  
+    config.generators.template_engine = :slim
 
     config.generators do |g|
       g.assets false
@@ -23,8 +23,8 @@ module Bpals
         helper_specs: false,
         routing_specs: false,
         controller_specs: false,
-        request_specs: false,
-      g.fixture_replacement :factory_bot, dir:"spec/factories"
+        request_specs: false
+      g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
 
   end
