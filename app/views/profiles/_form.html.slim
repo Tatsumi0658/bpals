@@ -1,0 +1,23 @@
+= form_with(model: @profile, local: true) do |f|
+  = f.label :nickname
+  = f.text_field :nickname
+  br
+  = f.label :image
+  = f.file_field :image
+  br
+  = f.radio_button :age, 1
+  = f.label :age, "10代~20代前半"
+  = f.radio_button :age, 2
+  = f.label :age, "20代後半"
+  = f.radio_button :age, 3
+  = f.label :age, "30代前半"
+  = f.radio_button :age, 4
+  = f.label :age, "30代後半以上"
+  br
+  = f.label :skintype
+  = f.select :skintype, [['a',1],['b',2]],{}
+  br
+  = f.label :purpose
+  = f.select :purpose, [['a',1],['b',2]],{}
+  br
+  = f.submit
