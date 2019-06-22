@@ -1,2 +1,6 @@
-h1 Profiles#index
-p Find me in app/views/profiles/index.html.slim
+- @profiles.each do |profile|
+  = profile.nickname
+  img src = profile.image
+  = judge_age(profile.age)
+  = judge_skintype(profile.skintype)
+  = judge_purpose(profile.purpose)
