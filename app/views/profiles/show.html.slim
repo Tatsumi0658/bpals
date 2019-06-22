@@ -1,2 +1,5 @@
-h1 Profiles#show
-p Find me in app/views/profiles/show.html.slim
+= @profile.nickname
+img src = @profile.image
+= judge_age(@profile.age)
+= judge_skintype(@profile.skintype)
+= judge_purpose(@profile.purpose)
