@@ -1,0 +1,19 @@
+class ProductCommentsController < ApplicationController
+  def create
+    @product = Product.find(params[:product_id])
+    @product_comment = @product.product_comments.build(product_comment_params)
+    @product_comment.profile_id = current_profile.id
+    respond_to do |format|
+      if @product_comment.save
+        format.js { render :index }
+      else
+        format.html{ rediirect_to product_path(@product) }
+      end
+    end
+  end
+
+  private
+  def product_comment_params
+    params.require(:product_comment).permit(:product_id, :content)
+  end
+end

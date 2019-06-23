@@ -1,0 +1,4 @@
+- @product_comments.each do |proc|
+  - if proc.id.present?
+    = proc.profile.nickname
+    p = proc.content

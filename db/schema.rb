@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_23_082610) do
+ActiveRecord::Schema.define(version: 2019_06_23_091550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 2019_06_23_082610) do
     t.index ["profile_id"], name: "index_posts_on_profile_id"
   end
 
+  create_table "product_comments", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "product_id"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_comments_on_product_id"
+    t.index ["profile_id"], name: "index_product_comments_on_profile_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
     t.json "product_images"
@@ -93,5 +103,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_082610) do
   add_foreign_key "post_hashtag_relationships", "hashtags"
   add_foreign_key "post_hashtag_relationships", "posts"
   add_foreign_key "posts", "profiles"
+  add_foreign_key "product_comments", "products"
+  add_foreign_key "product_comments", "profiles"
   add_foreign_key "profiles", "users"
 end

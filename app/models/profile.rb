@@ -3,5 +3,6 @@ class Profile < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
   has_many :posts, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :post_comments, dependent: :destroy
+  has_many :product_comments, dependent: :destroy
 end

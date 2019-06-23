@@ -18,6 +18,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product_comments = @product.product_comments
+    @product_comment = @product.product_comments.build
   end
 
   def edit
