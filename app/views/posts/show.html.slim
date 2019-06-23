@@ -3,10 +3,9 @@
 p = @post.profile.nickname
 img src = image_check(@post.profile.image)
 p = @post.content
-= link_to "show", post_path(@post.id)
 = link_to "edit", edit_post_path(@post.id)
 = link_to "destroy", post_path(@post.id), method: :delete, data:{ confirm: "OK?" }
 #post_comments_area
-  == render partial:'post_comments/index', locals:{ post_comments: @post_comments, post: @post }
+  == render partial: "post_comments/index", locals:{ post_comments: @post_comments, post: @post }
 
-== render partial:'post_comments/form', locals:{ post_comment: @post_comment, post: @post }
+== render partial: "post_comments/form", locals:{ post_comment: @post_comment, post: @post }
