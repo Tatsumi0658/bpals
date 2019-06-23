@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_23_071419) do
+ActiveRecord::Schema.define(version: 2019_06_23_082610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 2019_06_23_071419) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "post_comments", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "post_id"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_comments_on_post_id"
+    t.index ["profile_id"], name: "index_post_comments_on_profile_id"
   end
 
   create_table "post_hashtag_relationships", force: :cascade do |t|
@@ -78,6 +88,8 @@ ActiveRecord::Schema.define(version: 2019_06_23_071419) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "post_comments", "posts"
+  add_foreign_key "post_comments", "profiles"
   add_foreign_key "post_hashtag_relationships", "hashtags"
   add_foreign_key "post_hashtag_relationships", "posts"
   add_foreign_key "posts", "profiles"
