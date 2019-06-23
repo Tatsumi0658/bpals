@@ -1,4 +1,4 @@
-module ProfileHelper
+module ProfilesHelper
   def judge_age(age_value)
     if age_value == 1
       "10代後半~20代前半"

@@ -10,5 +10,6 @@ class Post < ApplicationRecord
       hash = hash.delete('#')
       hash_log = Hashtag.find_or_create_by(hashtag: hash)
       PostHashtagRelationship.create!(post_id: post.id, hashtag_id: hash_log.id)
+    end
   end
 end

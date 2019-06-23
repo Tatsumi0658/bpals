@@ -36,6 +36,11 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def hashtag
+    tag = Hashtag.find_by(hashtag: params[:name])
+    @hashs = PostHashtagRelationship.where(hashtag_id: tag.id)
+  end
+
   private
 
   def post_params
