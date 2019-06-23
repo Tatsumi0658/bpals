@@ -1,0 +1,4 @@
+- @post_comments.each do |pc|
+  - if pc.id.present?
+    = pc.profile.nickname
+    p = pc.content

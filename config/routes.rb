@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'post_comments/create'
   root to:"profiles#index"
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   end
   resources :profiles
   resources :posts do
-    resources :comments
+    resources :post_comments
   end
   get '/posts/hashtag/:name', to: 'posts#hashtag'
   resources :products
