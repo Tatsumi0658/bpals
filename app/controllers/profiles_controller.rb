@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only:[:edit, :update, :show, :destroy]
+  before_action :authenticate_user!
   def index
     @profiles = Profile.all
   end
@@ -10,6 +11,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
     if @profile.save
       redirect_to profiles_path
     else
