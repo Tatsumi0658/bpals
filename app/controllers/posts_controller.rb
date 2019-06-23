@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.profile_id = current_profile.id
     if @post.save
       redirect_to posts_path
     else

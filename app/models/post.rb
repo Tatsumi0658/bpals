@@ -1,7 +1,8 @@
 class Post < ApplicationRecord
   validates :images, presence: true
-  has_many :post_hashtag_relationships, through: :post_hashtag_relationships, source: :hashtags
   mount_uploaders :images, ImageUploader
+  has_many :post_hashtag_relationships, through: :post_hashtag_relationships, source: :hashtags
+  belongs_to :profile
 
   after_create do
     post = Post.find_by(id: self.id)

@@ -1,5 +1,7 @@
 - @post.images.each do |p|
   img src = p
+p = @post.profile.nickname
+img src = image_check(@post.profile.image)
 p = @post.content
 = link_to "show", post_path(@post.id)
 = link_to "edit", edit_post_path(@post.id)
