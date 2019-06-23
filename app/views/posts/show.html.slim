@@ -1,5 +1,10 @@
 - @post.images.each do |p|
   img src = p
+- unless @post.profile_id == current_profile.id
+  - if @favorite.present?
+    = link_to "お気に入りの解除", favorite_path(id: @favorite.id), method: :delete, data:{ confirm: "OK?" }
+  - else
+    = link_to "お気に入り登録", favorites_path(post_id: @post.id), method: :post
 p = @post.profile.nickname
 img src = image_check(@post.profile.image)
 p = @post.content
