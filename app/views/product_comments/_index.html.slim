@@ -2,3 +2,5 @@
   - if proc.id.present?
     = proc.profile.nickname
     p = proc.content
+    = link_to "delete", product_product_comment_path(proc.product_id, proc.id), method: :delete, id:"delete_comment", remote: true
+    br

@@ -2,3 +2,5 @@
   - if posc.id.present?
     = posc.profile.nickname
     p = posc.content
+    = link_to "delete", post_post_comment_path(posc.post_id, posc.id), method: :delete, id:"delete_comment", remote: true
+    br

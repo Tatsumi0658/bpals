@@ -12,6 +12,13 @@ class ProductCommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @product_comment = ProductComment.find_by(id: params[:id], product_id: params[:product_id], profile_id: current_profile.id)
+    if @product_comment.destroy
+      render :index
+    end
+  end
+
   private
   def product_comment_params
     params.require(:product_comment).permit(:product_id, :content)

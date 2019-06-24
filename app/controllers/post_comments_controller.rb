@@ -12,6 +12,13 @@ class PostCommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @post_comment = PostComment.find_by(id: params[:id], post_id: params[:post_id], profile_id: current_profile.id)
+    if @post_comment.destroy
+      render :index
+    end
+  end
+
   private
 
   def post_comment_params
