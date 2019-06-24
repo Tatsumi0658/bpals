@@ -3,6 +3,8 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   def index
     @profiles = Profile.all
+    @q = Profile.ransack(params[:q])
+    @profiles = @q.result(distinct: true)
   end
 
   def new
