@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   resources :profiles
   resources :posts do
     resources :post_comments
+    resources :favorites, only:[:create, :destroy]
   end
   get '/posts/hashtag/:name', to: 'posts#hashtag'
   resources :products do
     resources :product_comments
   end
-  resources :favorites, only:[:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
