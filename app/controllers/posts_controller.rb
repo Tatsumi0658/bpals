@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   def index
     @posts = Post.all
+    #@r = Post.ransack(params[:r])
+    #@posts = @r.result(distinct: true)
   end
 
   def new
