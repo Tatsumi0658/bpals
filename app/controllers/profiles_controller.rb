@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
     @q = Profile.ransack(params[:q])
-    @profiles = @q.result(distinct: true)
+    @profiles = @q.result
   end
 
   def new

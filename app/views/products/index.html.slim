@@ -1,3 +1,9 @@
+= search_form_for @pr do |f|
+  = f.label :name_cont
+  = f.search_field :name_cont
+  br
+  = f.submit
+  br
 - @products.each do |product|
   img src = product.product_images[0]
   h3 = product.name

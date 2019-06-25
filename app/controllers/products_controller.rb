@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only:[:edit, :update, :show, :destroy]
   def index
     @products = Product.all
+    @pr = Product.ransack(params[:pr], search_key: :pr)
+    @products = @pr.result
   end
 
   def new

@@ -14,8 +14,12 @@ Rails.application.routes.draw do
   resources :posts do
     resources :post_comments, only:[:create, :destroy]
     resources :favorites, only:[:create, :destroy]
+    collection do
+      get 'search', to: 'posts#search'
+      get 'hashtag/:name', to: 'posts#hashtag'
+    end
   end
-  get '/posts/hashtag/:name', to: 'posts#hashtag'
+
   resources :products do
     resources :product_comments, only:[:create, :destroy]
   end

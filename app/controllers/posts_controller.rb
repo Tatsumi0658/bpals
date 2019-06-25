@@ -2,9 +2,9 @@ class PostsController < ApplicationController
   before_action :set_post, only:[:edit, :update, :show, :destroy]
   before_action :authenticate_user!
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:profile)
     #@r = Post.ransack(params[:r])
-    #@posts = @r.result(distinct: true)
+    #@posts = @r.result
   end
 
   def new
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post_comments = @post.post_comments
+    @post_comments = @post.post_comments.includes(:profile)
     @post_comment = @post.post_comments.build
     @favorite = current_profile.favorites.find_by(post_id: @post.id)
   end
@@ -45,6 +45,11 @@ class PostsController < ApplicationController
 
   def hashtag
     tag = Hashtag.find_by(hashtag: params[:name])
+    @hashs = PostHashtagRelationship.where(hashtag_id: tag.id)
+  end
+
+  def search
+    tag = Hashtag.find_by(hashtag: params[:search])
     @hashs = PostHashtagRelationship.where(hashtag_id: tag.id)
   end
 

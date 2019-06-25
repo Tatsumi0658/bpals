@@ -16,4 +16,8 @@ class Post < ApplicationRecord
       PostHashtagRelationship.create!(post_id: post.id, hashtag_id: hash_log.id)
     end
   end
+
+  scope :search_content, ->(word){ where('content LIKE ?', "#{word}")}
+
+
 end
