@@ -7,7 +7,7 @@ class ProductCommentsController < ApplicationController
       if @product_comment.save
         format.js { render :index }
       else
-        format.html{ rediirect_to product_path(@product) }
+        format.js { render :error }
       end
     end
   end

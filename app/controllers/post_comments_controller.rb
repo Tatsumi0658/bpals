@@ -8,8 +8,6 @@ class PostCommentsController < ApplicationController
         format.js { render :index }
       else
         format.js { render :error }
-        #format.html { redirect_to post_path(@post) }
-        #flash[:notice] = "入力してください"
       end
     end
   end
