@@ -7,6 +7,7 @@ img src = image_check(@post.profile.image)
 p = @post.content
 = link_to "edit", edit_post_path(@post.id)
 = link_to "destroy", post_path(@post.id), method: :delete, data:{ confirm: "OK?" }
+= flash[:notice]
 #post_comments_area
   == render partial: "post_comments/index", locals:{ post_comments: @post_comments, post: @post }
 

@@ -7,7 +7,8 @@ class PostCommentsController < ApplicationController
       if @post_comment.save
         format.js { render :index }
       else
-        format.html{ redirect_to post_path(@post)}
+        format.html { redirect_to post_path(@post) }
+        flash[:notice] = "入力してください"
       end
     end
   end
