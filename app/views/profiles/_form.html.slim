@@ -1,4 +1,8 @@
 = form_with(model: @profile, local: true) do |f|
+  - if @profile.errors.any?
+    - @profile.errors.full_messages.each do |msg|
+      = msg
+      br
   = f.label :nickname
   = f.text_field :nickname
   br
