@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, length:{ maximum: 50 }
   mount_uploaders :product_images, ImageUploader
   has_many :product_comments, dependent: :destroy
 
