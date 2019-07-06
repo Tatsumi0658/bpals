@@ -3,6 +3,7 @@
   = submit_tag
 - @posts.each do |post|
   img src = post.images[0]
+  video src = post.images[0] controls=true
   p = post.content
   = change_hash(post.content)
   = link_to "show", post_path(post.id)

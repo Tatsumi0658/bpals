@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   validates :images, presence: true
-  mount_uploaders :images, ImageUploader
+  mount_uploaders :images, VideoUploader
   has_many :post_hashtag_relationships, through: :post_hashtag_relationships, source: :hashtags
   belongs_to :profile
   has_many :post_comments, dependent: :destroy
