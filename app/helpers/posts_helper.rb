@@ -10,4 +10,10 @@ module PostsHelper
       ""
     end
   end
+
+  def video_check(target)
+    if target.to_s.end_with?(".mp4") || target.to_s.end_with?(".gif") || target.to_s.end_with?(".mov")
+      return true
+    end
+  end
 end
