@@ -1,14 +1,18 @@
-= form_tag search_posts_path, method: :get do
-  = text_field_tag :search
-  = submit_tag
-- @posts.each do |post|
-  - if video_check(post.images[0]) == true
-    video src = post.images[0] control = true
-  - else
-    img src = post.images[0]
-  p = post.content
-  = change_hash(post.content)
-  = link_to "show", post_path(post.id)
-  = link_to "edit", edit_post_path(post.id)
-  = link_to "destoy", post_path(post.id), method: :delete, data: { confirm: "OK?" }
-  br
+.container
+  = form_tag search_posts_path, method: :get do
+    = text_field_tag :search, "", class:"form-control"
+    = submit_tag
+
+  ul.post-list
+    - @posts.each do |post|
+      li.post-item
+        - if video_check(post.images[0]) == true
+          video src = post.images[0] control = true
+        - else
+          img src = post.images[0]
+        p = post.content
+        = change_hash(post.content)
+        = link_to "show", post_path(post.id)
+        = link_to "edit", edit_post_path(post.id)
+        = link_to "destoy", post_path(post.id), method: :delete, data: { confirm: "OK?" }
+        br

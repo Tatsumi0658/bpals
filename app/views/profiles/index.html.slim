@@ -1,15 +1,18 @@
-= search_form_for @q do |f|
-  = f.label :nickname_cont
-  = f.search_field :nickname_cont
-  br
-  = f.submit
-- @profiles.each do |profile|
-  = profile.nickname
-  img src = profile.image
-  = judge_age(profile.age)
-  = judge_skintype(profile.skintype)
-  = judge_purpose(profile.purpose)
-  = link_to "show", profile_path(profile.id)
-  = link_to "edit", edit_profile_path(profile.id)
-  = link_to "destroy", profile_path(profile.id), method: :delete, data:{ confirm: "OK?" }
-  br
+.container
+  = search_form_for @q do |f|
+    = f.label :nickname_cont
+    = f.search_field :nickname_cont,"",class:"form-control"
+    br
+    = f.submit
+  ul.profile-list
+    - @profiles.each do |profile|
+      li.profile-item
+        = profile.nickname
+        img src = profile.image
+        = judge_age(profile.age)
+        = judge_skintype(profile.skintype)
+        = judge_purpose(profile.purpose)
+        = link_to "show", profile_path(profile.id)
+        = link_to "edit", edit_profile_path(profile.id)
+        = link_to "destroy", profile_path(profile.id), method: :delete, data:{ confirm: "OK?" }
+        br

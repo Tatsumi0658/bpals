@@ -1,8 +1,11 @@
-= form_tag search_products_path, method: :get do
-  = text_field_tag :keyword
-  = submit_tag
-- @products.each do |product|
-  img src = product.product_images[0]
-  h3 = product.name
-  = link_to "show", product_path(product.id)
-  br
+.container
+  = form_tag search_products_path, method: :get do
+    = text_field_tag :keyword,"",class:"form-control"
+    = submit_tag
+  ul.product-list
+    - @products.each do |product|
+      li.product-item
+        img src = product.product_images[0]
+        h3 = product.name
+        = link_to "show", product_path(product.id)
+        br
