@@ -1,9 +1,9 @@
 = form_with(model: [product, product_comment]) do |f|
   - if product_comment.errors.any?
     - product_comment.errors.full_messages.each do |msg|
-      = msg
+      .error_msg = msg
       br
-  = f.label :content
-  = f.text_area :content
+  = f.label :content, class:"post-label"
+  = f.text_area :content, class:"comment-item"
   br
-  = f.submit
+  = f.submit "post", class:"btn btn-success"

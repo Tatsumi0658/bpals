@@ -1,14 +1,14 @@
 = form_with(model: @post, local: true) do |f|
   - if @post.errors.any?
     - @post.errors.full_messages.each do |msg|
-      = msg
+      .error_msg = msg
       br
-  = f.label :images
-  = f.file_field :images, multiple: true
-  = f.file_field :images, multiple: true
-  = f.file_field :images, multiple: true
+  = f.label :images, class:"post-label"
+  = f.file_field :images, multiple: true, class:"post-item__file"
+  = f.file_field :images, multiple: true, class:"post-item__file"
+  = f.file_field :images, multiple: true, class:"post-item__file"
   br
-  = f.label :content
-  = f.text_area :content
+  = f.label :content, class:"post-label"
+  = f.text_area :content, class:"post-item"
   br
-  = f.submit
+  = f.submit "post", class:"btn btn-success"

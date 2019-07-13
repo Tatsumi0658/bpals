@@ -1,5 +1,6 @@
-= @profile.nickname
-img src = @profile.image
-= judge_age(@profile.age)
-= judge_skintype(@profile.skintype)
-= judge_purpose(@profile.purpose)
+.container
+  = @profile.nickname
+  img src = @profile.image
+  = judge_age(@profile.age)
+  = judge_skintype(@profile.skintype)
+  = judge_purpose(@profile.purpose)

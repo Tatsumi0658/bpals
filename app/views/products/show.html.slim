@@ -1,8 +1,9 @@
-- @product.product_images.each do |pimg|
-  img src = pimg
-  h3 = @product.name
-  p = @product.description
-#product_comments_area.comments
-  == render partial:'product_comments/index', locals:{ product_comments: @product_comments, product: @product }
+.container
+  - @product.product_images.each do |product_img|
+    img src = product_img
+    h3 = @product.name
+    p = @product.description
+  #product_comments_area.comments
+    == render partial:'product_comments/index', locals:{ product_comments: @product_comments, product: @product }
 
-== render partial:'product_comments/form', locals:{ product_comment: @product_comment, product: @product }
+  == render partial:'product_comments/form', locals:{ product_comment: @product_comment, product: @product }
