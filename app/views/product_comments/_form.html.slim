@@ -3,7 +3,9 @@
     - product_comment.errors.full_messages.each do |msg|
       .error_msg = msg
       br
-  = f.label :content, class:"post-label"
-  = f.text_area :content, class:"comment-item"
+  .field
+    = f.label :content, class:"post-label"
+    = f.text_area :content, class:"comment-item"
   br
-  = f.submit "post", class:"btn btn-success"
+  .actions
+    = f.submit "post", class:"btn btn-success"

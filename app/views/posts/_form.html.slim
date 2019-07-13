@@ -3,12 +3,15 @@
     - @post.errors.full_messages.each do |msg|
       .error_msg = msg
       br
-  = f.label :images, class:"post-label"
-  = f.file_field :images, multiple: true, class:"post-item__file"
-  = f.file_field :images, multiple: true, class:"post-item__file"
-  = f.file_field :images, multiple: true, class:"post-item__file"
+  .field
+    = f.label :images, class:"post-label"
+    = f.file_field :images, multiple: true, class:"post-item__file"
+    = f.file_field :images, multiple: true, class:"post-item__file"
+    = f.file_field :images, multiple: true, class:"post-item__file"
   br
-  = f.label :content, class:"post-label"
-  = f.text_area :content, class:"post-item"
+  .field
+    = f.label :content, class:"post-label"
+    = f.text_area :content, class:"post-item"
   br
-  = f.submit "post", class:"btn btn-success"
+  .actions
+    = f.submit "post", class:"btn btn-success"

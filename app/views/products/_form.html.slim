@@ -3,15 +3,19 @@
     - @product.errors.full_messages.each do |msg|
       .error_msg = msg
       br
-  = f.label :name, class:"post-label"
-  = f.text_field :name, class:"post-item"
+  .field
+    = f.label :name, class:"post-label"
+    = f.text_field :name, class:"post-item"
   br
-  = f.label :product_images, class:"post-label"
-  = f.file_field :product_images, multiple: true, class:"post-item__file"
-  = f.file_field :product_images, multiple: true, class:"post-item__file"
-  = f.file_field :product_images, multiple: true, class:"post-item__file"
+  .field
+    = f.label :product_images, class:"post-label"
+    = f.file_field :product_images, multiple: true, class:"post-item__file"
+    = f.file_field :product_images, multiple: true, class:"post-item__file"
+    = f.file_field :product_images, multiple: true, class:"post-item__file"
   br
-  = f.label :description, class:"post-label"
-  = f.text_area :description, class:"post-item"
+  .field
+    = f.label :description, class:"post-label"
+    = f.text_area :description, class:"post-item"
   br
-  = f.submit "post", class:"btn btn-success"
+  .actions
+    = f.submit "post", class:"btn btn-success"

@@ -3,25 +3,31 @@
     - @profile.errors.full_messages.each do |msg|
       .error_msg = msg
       br
-  = f.label :nickname, class:"post-label"
-  = f.text_field :nickname, class:"post-item"
+  .field
+    = f.label :nickname, class:"post-label"
+    = f.text_field :nickname, class:"post-item"
   br
-  = f.label :image, class:"post-label"
-  = f.file_field :image, class:"post-item__file"
+  .field
+    = f.label :image, class:"post-label"
+    = f.file_field :image, class:"post-item__file"
   br
-  = f.radio_button :age, 1
-  = f.label :age, "10代~20代前半", class:"post-label__radio"
-  = f.radio_button :age, 2
-  = f.label :age, "20代後半", class:"post-label__radio"
-  = f.radio_button :age, 3
-  = f.label :age, "30代前半", class:"post-label__radio"
-  = f.radio_button :age, 4
-  = f.label :age, "30代後半以上", class:"post-label__radio"
+  .field
+    = f.radio_button :age, 1
+    = f.label :age, "10代~20代前半", class:"post-label__radio"
+    = f.radio_button :age, 2
+    = f.label :age, "20代後半", class:"post-label__radio"
+    = f.radio_button :age, 3
+    = f.label :age, "30代前半", class:"post-label__radio"
+    = f.radio_button :age, 4
+    = f.label :age, "30代後半以上", class:"post-label__radio"
   br
-  = f.label :skintype, class:"post-label"
-  = f.select :skintype, [['a',1],['b',2]],{}, class:"post-item__select"
+  .field
+    = f.label :skintype, class:"post-label"
+    = f.select :skintype, [['a',1],['b',2]],{}, class:"post-item__select"
   br
-  = f.label :purpose, class:"post-label"
-  = f.select :purpose, [['a',1],['b',2]],{}, class:"post-item__select"
+  .field
+    = f.label :purpose, class:"post-label"
+    = f.select :purpose, [['a',1],['b',2]],{}, class:"post-item__select"
   br
-  = f.submit "post", class:"btn btn-success"
+  .actions
+    = f.submit "post", class:"btn btn-success"
