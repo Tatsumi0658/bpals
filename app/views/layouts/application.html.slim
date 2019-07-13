@@ -9,6 +9,29 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    header
+      .header
+        .header-inner
+          .header-wrap
+            a href = "/" = "B-PALs"
+          #nav-drawer
+            input id="nav-input" type="checkbox" class="nav-unshown"
+            label id="nav-open" for="nav-input"
+              span
+            label class="nav-unshown" id="nav-close" for="nav-input"
+            #nav-content
+              .menu
+                h2.menu-title Menu
+                ul.menu-list
+                  li.menu-item
+                    a href = "" "posts"
+                  li.menu-item
+                    a href = "" "profiles"
+                  li.menu-item
+                    a href = "" "products"
+                  li.menu-item
+                    a href = "" "my page"
+
     main.main
       = yield
     br
