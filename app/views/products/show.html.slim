@@ -5,8 +5,8 @@
       h2.product-name = @product.name
       h3.product-label = "説明"
       p.product-text = @product.description
+  h3.comment-label = "コメント"
   #product_comments_area.comments
-    h3.comment-label = "コメント"
     == render partial:'product_comments/index', locals:{ product_comments: @product_comments, product: @product }
 
   == render partial:'product_comments/form', locals:{ product_comment: @product_comment, product: @product }

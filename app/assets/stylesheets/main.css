@@ -62,8 +62,8 @@ ul{
 .product-label, .comment-label{
   margin: 0 0 6px;
 }
-.comments{
-  margin: 48px 0;
+.comment-label{
+  margin: 48px 0 12px;;
 }
 .comment-icon{
   height: 30px;
@@ -87,4 +87,10 @@ ul{
   padding: 5px;
   right: 5px;
   text-decoration: none;
+}
+.post-icon{
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  margin: 0 8px 0 0;
 }
