@@ -4,18 +4,18 @@
       .error_msg = msg
       br
   .field
-    = f.label :name, class:"post-label"
-    = f.text_field :name, class:"post-item"
+    = f.label :name, class:"form-label"
+    = f.text_field :name, class:"form-item"
   br
   .field
-    = f.label :product_images, class:"post-label"
-    = f.file_field :product_images, multiple: true, class:"post-item__file"
-    = f.file_field :product_images, multiple: true, class:"post-item__file"
-    = f.file_field :product_images, multiple: true, class:"post-item__file"
+    = f.label :product_images, class:"form-label"
+    = f.file_field :product_images, multiple: true, class:"form-item__file"
+    = f.file_field :product_images, multiple: true, class:"form-item__file"
+    = f.file_field :product_images, multiple: true, class:"form-item__file"
   br
   .field
-    = f.label :description, class:"post-label"
-    = f.text_area :description, class:"post-item"
+    = f.label :description, class:"form-label"
+    = f.text_area :description, class:"form-item__textarea"
   br
   .actions
     = f.submit "post", class:"btn btn-success"

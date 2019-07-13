@@ -4,30 +4,31 @@
       .error_msg = msg
       br
   .field
-    = f.label :nickname, class:"post-label"
-    = f.text_field :nickname, class:"post-item"
+    = f.label :nickname, class:"form-label"
+    = f.text_field :nickname, class:"form-item"
   br
   .field
-    = f.label :image, class:"post-label"
-    = f.file_field :image, class:"post-item__file"
+    = f.label :image, class:"form-label"
+    = f.file_field :image, class:"form-item__file"
   br
   .field
+    = f.label :age, class:"form-label"
     = f.radio_button :age, 1
-    = f.label :age, "10代~20代前半", class:"post-label__radio"
+    = f.label :age, "10代~20代前半", class:"form-label__radio"
     = f.radio_button :age, 2
-    = f.label :age, "20代後半", class:"post-label__radio"
+    = f.label :age, "20代後半", class:"form-label__radio"
     = f.radio_button :age, 3
-    = f.label :age, "30代前半", class:"post-label__radio"
+    = f.label :age, "30代前半", class:"form-label__radio"
     = f.radio_button :age, 4
-    = f.label :age, "30代後半以上", class:"post-label__radio"
+    = f.label :age, "30代後半以上", class:"form-label__radio"
   br
   .field
-    = f.label :skintype, class:"post-label"
-    = f.select :skintype, [['a',1],['b',2]],{}, class:"post-item__select"
+    = f.label :skintype, class:"form-label"
+    = f.select :skintype, [['a',1],['b',2]],{}, class:"form-item__select"
   br
   .field
-    = f.label :purpose, class:"post-label"
-    = f.select :purpose, [['a',1],['b',2]],{}, class:"post-item__select"
+    = f.label :purpose, class:"form-label"
+    = f.select :purpose, [['a',1],['b',2]],{}, class:"form-item__select"
   br
   .actions
     = f.submit "post", class:"btn btn-success"

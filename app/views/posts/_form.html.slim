@@ -4,14 +4,14 @@
       .error_msg = msg
       br
   .field
-    = f.label :images, class:"post-label"
-    = f.file_field :images, multiple: true, class:"post-item__file"
-    = f.file_field :images, multiple: true, class:"post-item__file"
-    = f.file_field :images, multiple: true, class:"post-item__file"
+    = f.label :images, class:"form-label"
+    = f.file_field :images, multiple: true, class:"form-item__file"
+    = f.file_field :images, multiple: true, class:"form-item__file"
+    = f.file_field :images, multiple: true, class:"form-item__file"
   br
   .field
-    = f.label :content, class:"post-label"
-    = f.text_area :content, class:"post-item"
+    = f.label :content, class:"form-label"
+    = f.text_area :content, class:"form-item__textarea"
   br
   .actions
     = f.submit "post", class:"btn btn-success"
