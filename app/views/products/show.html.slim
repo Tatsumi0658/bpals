@@ -1,9 +1,12 @@
 .container
-  - @product.product_images.each do |product_img|
-    img src = product_img
-    h3 = @product.name
-    p = @product.description
+  .product
+    - @product.product_images.each do |product_img|
+      img.product-image src = product_img
+      h2.product-name = @product.name
+      h3.product-label = "説明"
+      p.product-text = @product.description
   #product_comments_area.comments
+    h3.comment-label = "コメント"
     == render partial:'product_comments/index', locals:{ product_comments: @product_comments, product: @product }
 
   == render partial:'product_comments/form', locals:{ product_comment: @product_comment, product: @product }

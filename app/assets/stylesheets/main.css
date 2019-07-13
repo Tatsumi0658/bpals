@@ -21,7 +21,7 @@ ul{
   position: relative;
   width: 100%;
 }
-.profile-item, .product-item{
+.profile-item, .product-item, .comment-item{
   border-bottom: 1px solid #ddd;
 }
 .profile-item{
@@ -31,23 +31,60 @@ ul{
   padding:14px;
 }
 .list-icon{
-  width: 80px;
   height: 80px;
   margin: 0 15px 0 0;
   vertical-align: middle;
+  width: 80px;
 }
 .list-link{
-  position:relative;
   display: block;
+  position:relative;
   width: 100%;
 }
 .tag-list{
-  position: absolute;
-  right: 0;
   display: flex;
   flex-wrap: wrap;
+  position: absolute;
+  right: 0;
 }
 .tag-item{
-  overflow:hidden;
-  position:relative;
+  overflow: hidden;
+  position: relative;
+}
+.product-image{
+  width: 500px;
+}
+.product-name{
+  font-size: 3.0rem;
+  font-weight: bold;
+  margin: 12px 0 36px;
+}
+.product-label, .comment-label{
+  margin: 0 0 6px;
+}
+.comments{
+  margin: 48px 0;
+}
+.comment-icon{
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  margin: 0 8px 0 0;
+}
+.comment{
+  margin: 18px 0 12px;
+}
+.comment-item{
+  padding: 6px 0 30px;
+}
+.btn-delete{
+  background-color: red;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  opacity: 0.7;
+  position: absolute;
+  padding: 5px;
+  right: 5px;
+  text-decoration: none;
 }
