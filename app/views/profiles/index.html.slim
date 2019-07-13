@@ -7,12 +7,10 @@
   ul.profile-list
     - @profiles.each do |profile|
       li.profile-item
-        = profile.nickname
-        img src = profile.image
-        = judge_age(profile.age)
-        = judge_skintype(profile.skintype)
-        = judge_purpose(profile.purpose)
-        = link_to "show", profile_path(profile.id)
-        = link_to "edit", edit_profile_path(profile.id)
-        = link_to "destroy", profile_path(profile.id), method: :delete, data:{ confirm: "OK?" }
-        br
+        a.list-link href = profile_path(profile.id)
+          img.list-icon src = profile.image
+          = profile.nickname
+        ul.tag-list
+          li.tag-item = judge_age(profile.age)
+          li.tag-item = judge_skintype(profile.skintype)
+          li.tag-item = judge_purpose(profile.purpose)

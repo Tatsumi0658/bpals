@@ -7,9 +7,9 @@
     - @posts.each do |post|
       li.post-item
         - if video_check(post.images[0]) == true
-          video src = post.images[0] control = true
+          video.post-wrap src = post.images[0] controls = true
         - else
-          img src = post.images[0]
+          img.post-wrap src = post.images[0]
         p = post.content
         = change_hash(post.content)
         = link_to "show", post_path(post.id)
