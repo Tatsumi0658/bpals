@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     if @profile.save
-      redirect_to profiles_path
+      redirect_to posts_path
     else
       render :new
     end
@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to profiles_path
+      redirect_to posts_path
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
 
   def destroy
     @profile.destroy
-    redirect_to profiles_path
+    redirect_to posts_path
   end
 
   private

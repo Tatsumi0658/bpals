@@ -1,4 +1,5 @@
 class ProductCommentsController < ApplicationController
+  before_action :current_profile!, only:[:create, :destroy]
   def create
     @product = Product.find(params[:product_id])
     @product_comment = @product.product_comments.build(product_comment_params)
@@ -22,5 +23,11 @@ class ProductCommentsController < ApplicationController
   private
   def product_comment_params
     params.require(:product_comment).permit(:product_id, :content)
+  end
+
+  def current_profile!
+    unless current_profile.present?
+      redirect_to new_profile_path
+    end
   end
 end
