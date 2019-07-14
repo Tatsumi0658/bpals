@@ -1,3 +1,10 @@
-- @hashs.each do |hash|
-  img src = hash.post.images[0]
-  p = hash.post.content
+.container
+  ul.post-list
+    - @hashs.each do |hash|
+      li.post-item
+        - if video_check(hash.post.images[0]) == true
+          = link_to post_path(hash.post.id) do
+            video.post-wrap src = hash.post.images[0] controls = true
+        - else
+          = link_to post_path(hash.post.id)
+            img.post-wrap src = hash.post.images[0]

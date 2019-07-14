@@ -25,13 +25,14 @@ html
                 h2.menu-title Menu
                 ul.menu-list
                   li.menu-item
-                    a.menu-link href = "" posts
+                    = link_to "posts", posts_path ,class: "menu-link"
                   li.menu-item
-                    a.menu-link href = "" profiles
+                    = link_to "profiles", profiles_path, class: "menu-link"
                   li.menu-item
-                    a.menu-link href = "" products
-                  li.menu-item
-                    a.menu-link href = "" my page
+                    = link_to "products", products_path, class: "menu-link"
+                  - if current_user.present? && current_profile.present?
+                    li.menu-item
+                      = link_to "my page", profile_path(current_profile.id), class:"menu-link"
 
     main.main
       = yield

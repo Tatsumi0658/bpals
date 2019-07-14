@@ -4,22 +4,28 @@ ul{
 .post-list{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0 auto;
 }
 .post-item{
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
-  border-radius: 4px;
-  margin: 0 0 24px;
+  margin: 0 0 2px;
   overflow: hidden;
   position: relative;
+  padding: 0 2px;
   width: 32%;
 }
 .post-wrap{
   position: relative;
   width: 100%;
+  height: 30vw;
+  max-height: 250px;
+  object-fit: cover;
+}
+.post-content{
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 400px;
+  object-fit: contain;
 }
 .profile-item, .product-item, .comment-item{
   border-bottom: 1px solid #ddd;
@@ -92,9 +98,9 @@ ul{
   margin: 12px 0 36px;
 }
 .profile-name{
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin: 12px 0 24px;
+  margin: 12px 0 12px;
 }
 .product-label, .comment-label{
   margin: 0 0 6px;
@@ -129,6 +135,9 @@ ul{
   margin: 0 8px 0 0;
   vertical-align: middle;
   width: 50px;
+}
+.post-profile{
+  margin: 0 0 2px 0;
 }
 .form-label{
   display: block;
@@ -177,7 +186,7 @@ ul{
 #nav-drawer {
   position: absolute;
   top: 15px;
-  right: 0;
+  right: 8px;
 }
 
 .nav-unshown {
@@ -266,4 +275,22 @@ ul{
   max-width: 1000px;
   margin: 0 auto;
   padding: 5px;
+}
+.tag-list__show{
+  margin: 0 0 8px 0;
+}
+.tag-item__show{
+  border: solid 1px #ccc;
+  border-radius: 10px;
+  display: inline-block;
+  font-size:  .9rem;
+  padding: 5px;
+}
+.link-list{
+  margin: 12px 0 0 0;
+}
+.mypage-link{
+  display: inline-block;
+  font-size: .8rem;
+  margin:0 5px 0 0;
 }

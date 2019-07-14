@@ -5,14 +5,16 @@
       = @post.profile.nickname
     - @post.images.each do |post_img|
       - if video_check(post_img) == true
-        video.post-wrap src = post_img controls = true
+        video.post-content src = post_img controls = true
       - else
-        img.post-wrap src = post_img
+        img.post-content src = post_img
     br
-    == render partial: "favorites/favorite", locals:{ favorite: @favorite, post: @post }
     p.post-text = @post.content
-    = link_to "edit", edit_post_path(@post.id)
-    = link_to "destroy", post_path(@post.id), method: :delete, data:{ confirm: "OK?" }
+    = link_to change_hash(@post.content), search_posts_path(@post.content)
+    == render partial: "favorites/favorite", locals:{ favorite: @favorite, post: @post }
+    - if @post.profile.id == current_profile.id
+      = link_to "edit", edit_post_path(@post.id)
+      = link_to "destroy", post_path(@post.id), method: :delete, data:{ confirm: "OK?" }
   h3.comment-label = "コメント"
   #post_comments_area.comments
     == render partial: "post_comments/index", locals:{ post_comments: @post_comments, post: @post }

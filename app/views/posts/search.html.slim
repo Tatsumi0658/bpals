@@ -3,7 +3,8 @@
     - @hashs.each do |hash|
       li.post-item
         - if video_check(hash.post.images[0]) == true
-          video.card-img src = hash.post.images[0] controls=true
+          = link_to post_path(hash.post.id) do
+            video.post-wrap src = hash.post.images[0] controls = true
         - else
           = link_to post_path(hash.post.id)
-            img.card-img src = hash.post.images[0]
+            img.post-wrap src = hash.post.images[0]

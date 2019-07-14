@@ -6,5 +6,12 @@
       h2.profile-name = @profile.nickname
       ul.tag-list__show
         li.tag-item__show = judge_age(@profile.age)
+        br
         li.tag-item__show = judge_skintype(@profile.skintype)
+        br
         li.tag-item__show = judge_purpose(@profile.purpose)
+        - if current_profile.present? && @profile.id == current_profile.id
+          .link-list
+            = link_to "プロフィール編集", edit_profile_path(current_profile.id), class:"mypage-link"
+            nsbp
+            = link_to "個人情報", edit_user_registration_path, class:"mypage-link"
