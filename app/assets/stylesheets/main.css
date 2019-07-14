@@ -25,10 +25,10 @@ ul{
   border-bottom: 1px solid #ddd;
 }
 .profile-item{
-  padding: 14px 14px 30px 14px;
+  padding: 14px 12px 30px;
 }
 .product-item{
-  padding: 14px;
+  padding: 14px 12px;
 }
 .list-icon{
   height: 80px;
@@ -56,8 +56,19 @@ ul{
   margin: 0 3px;
   font-size: .9rem;
 }
+.product{
+  display: flex;
+  justify-content: space-between;
+}
+.product-thum{
+  width: 100%;
+  max-width: 400px;
+}
 .product-image{
-  width: 500px;
+  width: 100%;
+}
+.product-desc{
+  width: calc(100% - 415px);
 }
 .product-name{
   font-size: 3.0rem;
@@ -233,4 +244,5 @@ ul{
 .main{
   max-width: 1000px;
   margin: 0 auto;
+  padding: 5px;
 }

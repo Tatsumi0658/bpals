@@ -1,10 +1,12 @@
 .container
   .product
     - @product.product_images.each do |product_img|
-      img.product-image src = product_img
-      h2.product-name = @product.name
-      h3.product-label = "説明"
-      p.product-text = @product.description
+      .product-thum
+        img.product-image src = product_img
+      .product-desc
+        h2.product-name = @product.name
+        h3.product-label = "説明"
+        p.product-text = @product.description
   h3.comment-label = "コメント"
   #product_comments_area.comments
     == render partial:'product_comments/index', locals:{ product_comments: @product_comments, product: @product }
