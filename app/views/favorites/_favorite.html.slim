@@ -1,4 +1,4 @@
-- unless post.profile_id == current_profile.id
+- if current_profile.present? &&  post.profile_id != current_profile.id
   - if favorite.present?
     = link_to "お気に入りの解除", post_favorite_path(favorite, post_id: post.id), method: :delete, id:"delete", remote: true
   - else
