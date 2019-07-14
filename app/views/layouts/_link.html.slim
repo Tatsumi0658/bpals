@@ -1,0 +1,5 @@
+- if current_user.present? && current_profile.nil?
+  = link_to "+", new_profile_path, class:"btn btn-plus"
+- elsif current_profile.present?
+  = link_to "+", new_post_path, class:"btn btn-plus"
+- else
