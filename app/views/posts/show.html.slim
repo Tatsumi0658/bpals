@@ -10,7 +10,7 @@
         img.post-content src = post_img
     br
     p.post-text = @post.content
-    = link_to change_hash(@post.content), search_posts_path(@post.content)
+    = link_to change_hash(@post.content), search_posts_path(change_hash(@post.content))
     == render partial: "favorites/favorite", locals:{ favorite: @favorite, post: @post }
     - if @post.profile.id == current_profile.id
       = link_to "edit", edit_post_path(@post.id)

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #get 'oauth/index'
-  root to:'oauth#index'
+  root to:'posts#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',

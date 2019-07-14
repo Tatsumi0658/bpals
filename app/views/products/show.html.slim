@@ -11,4 +11,5 @@
   #product_comments_area.comments
     == render partial:'product_comments/index', locals:{ product_comments: @product_comments, product: @product }
 
-  == render partial:'product_comments/form', locals:{ product_comment: @product_comment, product: @product }
+  - if current_profile.present?
+    == render partial:'product_comments/form', locals:{ product_comment: @product_comment, product: @product }

@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only:[:edit, :update, :show, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only:[:new, :create, :show, :edit, :update, :destroy]
   def index
     @profiles = Profile.all
     @q = Profile.ransack(params[:q])

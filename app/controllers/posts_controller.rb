@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only:[:edit, :update, :show, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only:[:new, :create, :show, :edit, :update, :destroy]
   before_action :current_profile!, only:[:new, :create, :show, :edit, :update, :destroy]
   def index
     @posts = Post.all.includes(:profile)
