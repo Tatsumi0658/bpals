@@ -25,7 +25,7 @@ ul{
   border-bottom: 1px solid #ddd;
 }
 .profile-item{
-  padding: 14px 14px 20px 14px;
+  padding: 14px 14px 30px 14px;
 }
 .product-item{
   padding: 14px;
@@ -40,16 +40,21 @@ ul{
   display: block;
   position:relative;
   width: 100%;
+  text-decoration: none;
 }
 .tag-list{
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
-  right: 0;
+  float: right;
 }
 .tag-item{
   overflow: hidden;
   position: relative;
+  padding: 5px 15px;
+  border: solid 1px #ccc;
+  border-radius: 10px;
+  margin: 0 3px;
+  font-size: .9rem;
 }
 .product-image{
   width: 500px;
@@ -82,10 +87,9 @@ ul{
   border-radius: 5px;
   color: #fff;
   display: block;
+  float: right;
   opacity: 0.7;
-  position: absolute;
   padding: 5px;
-  right: 5px;
   text-decoration: none;
 }
 .post-icon{
@@ -213,4 +217,20 @@ ul{
 
 .header-inner{
   padding: 15px;
+}
+.menu{
+  padding: 50px 30px;
+}
+.menu-list{
+  margin: 30px 0;
+}
+.menu-link{
+  display: block;
+  padding: 14px 0;
+  position: relative;
+  width: 100%;
+}
+.main{
+  max-width: 1000px;
+  margin: 0 auto;
 }
