@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_01_144004) do
+ActiveRecord::Schema.define(version: 2019_07_15_071220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,16 +81,30 @@ ActiveRecord::Schema.define(version: 2019_07_01_144004) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profile_purpose_relationships", force: :cascade do |t|
+    t.bigint "profile_id"
+    t.bigint "purpose_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_profile_purpose_relationships_on_profile_id"
+    t.index ["purpose_id"], name: "index_profile_purpose_relationships_on_purpose_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "image"
     t.integer "age"
     t.integer "skintype"
-    t.integer "purpose"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "purposes", force: :cascade do |t|
+    t.string "purpose"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -120,5 +134,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_144004) do
   add_foreign_key "posts", "profiles"
   add_foreign_key "product_comments", "products"
   add_foreign_key "product_comments", "profiles"
+  add_foreign_key "profile_purpose_relationships", "profiles"
+  add_foreign_key "profile_purpose_relationships", "purposes"
   add_foreign_key "profiles", "users"
 end

@@ -27,8 +27,10 @@
     = f.select :skintype, [['a',1],['b',2]],{}, class:"form-item__select"
   br
   .field
-    = f.label :purpose, class:"form-label"
-    = f.select :purpose, [['a',1],['b',2]],{}, class:"form-item__select"
+    f.label :purpose_ids
+      - Purpose.all.each do |purpose|
+        = f.check_box :purpose_ids,{ multiple: true, checked: purpose[:checked], include_hidden: false}, purpose[:id]
+        = purpose.purpose
   br
   .actions
     = f.submit "post", class:"btn btn-success"
