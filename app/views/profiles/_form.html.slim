@@ -22,12 +22,21 @@
     = f.radio_button :age, 4
     = f.label :age, "30代後半以上", class:"form-label__radio"
   br
-  .field
+  field
     = f.label :skintype, class:"form-label"
-    = f.select :skintype, [['a',1],['b',2]],{}, class:"form-item__select"
+    = f.radio_button :skintype, 1
+    = f.label :skintype, "普通肌", class:"form-label__radio"
+    = f.radio_button :skintype, 2
+    = f.label :skintype, "乾燥肌", class:"form-label__radio"
+    = f.radio_button :skintype, 3
+    = f.label :skintype, "脂性肌", class:"form-label__radio"
+    = f.radio_button :skintype, 4
+    = f.label :skintype, "混合肌", class:"form-label__radio"
+    = f.radio_button :skintype, 5
+    = f.label :skintype, "わからない", class:"form-label__radio"
   br
   .field
-    f.label :purpose_ids
+    = f.label :purpose_ids, "利用シーン", class:"form-label"
       - Purpose.all.each do |purpose|
         = f.check_box :purpose_ids,{ multiple: true, checked: purpose[:checked], include_hidden: false}, purpose[:id]
         = purpose.purpose
