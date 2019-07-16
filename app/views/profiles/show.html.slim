@@ -9,7 +9,9 @@
         br
         li.tag-item__show = judge_skintype(@profile.skintype)
         br
-        li.tag-item__show = judge_purpose(@profile.purpose)
+        - @purposes.each do |pur|
+          li.tag-item__show = pur.purpose.purpose
+          br
         - if current_profile.present? && @profile.id == current_profile.id
           .link-list
             = link_to "プロフィール編集", edit_profile_path(current_profile.id), class:"mypage-link"
