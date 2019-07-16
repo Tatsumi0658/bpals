@@ -14,6 +14,6 @@
           li.tag-item = judge_age(profile.age)
           li.tag-item = judge_skintype(profile.skintype)
           - @purposes.each do |pur|
-            li.tag-item__show = pur.purpose.purpose
+            li.tag-item = pur.purpose.purpose
 
   == render partial: "layouts/link"

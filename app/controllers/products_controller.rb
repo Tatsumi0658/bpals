@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only:[:edit, :update, :show, :destroy]
   before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
   before_action :judge_admin, only:[:new, :create, :edit, :update, :destroy]
-  
+
   def index
     @products = Product.all
   end
