@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only:[:edit, :update, :show, :destroy]
   before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
+  before_action :judge_admin, only:[:new, :create, :edit, :update, :destroy]
+  
   def index
     @products = Product.all
   end
@@ -50,6 +52,12 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def judge_admin
+    unless current_user.admin_flag == true
+      redirect_to posts_path
+    end
   end
 
 end
