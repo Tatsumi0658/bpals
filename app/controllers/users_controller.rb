@@ -6,9 +6,13 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     if @user.admin_flag == true
-      @user.update(admin_flag: false)
+      @user.admin_flag = false
+      @user.save
+      redirect_to users_path
     else
-      @user.update(admin_flag: true)
+      @user.admin_flag = true
+      @user.save
+      redirect_to users_path
     end
   end
 
