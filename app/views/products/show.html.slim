@@ -1,8 +1,14 @@
 .container
   .product
-    - @product.product_images.each do |product_img|
-      .product-thum
+    - @product.product_images.each_with_index do |product_img, i|
+      .product_thum id="post-image__#{i}"
         img.product-image src = product_img
+        #button-container
+          #button-list
+            - @product.product_images.each_with_index do |product_img, i|
+              label
+                input class="radio-images" type="radio" name="images" value=i
+                span.images-label
       .product-desc
         h2.product-name = @product.name
         h3.product-label = "説明"

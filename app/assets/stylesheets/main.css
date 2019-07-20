@@ -309,17 +309,17 @@ ul{
   display: none;
 }
 #button-container{
-  margin: -50px 0 auto;
+  margin: -30px 0 auto;
   max-width: 500px;
   position: relative;
   width: 100%;
-  z-index: 998;
+  z-index: 98;
 }
 #button-list{
   text-align:center;
   position: relative;
   width: 100%;
-  z-index: 997;
+  z-index: 97;
 }
 .images-label{
   background-color: #fff;

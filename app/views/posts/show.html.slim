@@ -3,7 +3,6 @@
     .post-profile
       img.post-icon src = image_check(@post.profile.image)
       = @post.profile.nickname
-    .slide
       - @post.images.each_with_index do |post_img, i|
         div id = "post-image__#{i}"
           - if video_check(post_img) == true
