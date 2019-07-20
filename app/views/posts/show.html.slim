@@ -3,11 +3,19 @@
     .post-profile
       img.post-icon src = image_check(@post.profile.image)
       = @post.profile.nickname
-    - @post.images.each do |post_img|
-      - if video_check(post_img) == true
-        video.post-content src = post_img controls = true
-      - else
-        img.post-content src = post_img
+    .slide
+      - @post.images.each_with_index do |post_img, i|
+        div id = "post-image__#{i}"
+          - if video_check(post_img) == true
+            video.post-content src = post_img controls = true
+          - else
+            img.post-content src = post_img
+    #button-container
+      #button-list
+        - @post.images.each_with_index do |post_img, i|
+          label
+            input class="radio-images" type="radio" name="images" value=i
+            span.images-label
     br
     p.post-text = @post.content
     = change_hash(@post.content)
