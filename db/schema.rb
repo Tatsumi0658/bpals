@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_180814) do
+ActiveRecord::Schema.define(version: 2019_07_20_065902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,14 +128,14 @@ ActiveRecord::Schema.define(version: 2019_07_16_180814) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "post_comments", "posts"
-  add_foreign_key "post_comments", "profiles"
-  add_foreign_key "post_hashtag_relationships", "hashtags"
-  add_foreign_key "post_hashtag_relationships", "posts"
-  add_foreign_key "posts", "profiles"
-  add_foreign_key "product_comments", "products"
-  add_foreign_key "product_comments", "profiles"
-  add_foreign_key "profile_purpose_relationships", "profiles"
-  add_foreign_key "profile_purpose_relationships", "purposes"
-  add_foreign_key "profiles", "users"
+  add_foreign_key "post_comments", "posts", on_delete: :cascade
+  add_foreign_key "post_comments", "profiles", on_delete: :cascade
+  add_foreign_key "post_hashtag_relationships", "hashtags", on_delete: :cascade
+  add_foreign_key "post_hashtag_relationships", "posts", on_delete: :cascade
+  add_foreign_key "posts", "profiles", on_delete: :cascade
+  add_foreign_key "product_comments", "products", on_delete: :cascade
+  add_foreign_key "product_comments", "profiles", on_delete: :cascade
+  add_foreign_key "profile_purpose_relationships", "profiles", on_delete: :cascade
+  add_foreign_key "profile_purpose_relationships", "purposes", on_delete: :cascade
+  add_foreign_key "profiles", "users", on_delete: :cascade
 end
