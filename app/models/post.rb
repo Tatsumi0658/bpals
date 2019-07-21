@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   validates :images, presence: true
+  validates :content, length:{ maximum: 300 }
   mount_uploaders :images, VideoUploader
   has_many :post_hashtag_relationships, through: :post_hashtag_relationships, source: :hashtags
   belongs_to :profile
