@@ -10,4 +10,21 @@ RSpec.describe Purpose, type: :model do
       expect(pur.purpose).to eq "MyString#{i+1}"
     end
   end
+
+  it "purposeの未入力" do
+    purpose = Purpose.new(
+      purpose:nil
+    )
+    purpose.valid?
+    expect(purpose).to be_invalid
+  end
+
+  it "purposeが長すぎる場合" do
+    content = "a" * 40
+    purpose = Purpose.new(
+      purpose: content
+    )
+    purpose.valid?
+    expect(purpose).to be_invalid
+  end
 end
