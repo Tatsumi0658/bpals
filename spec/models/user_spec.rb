@@ -43,4 +43,14 @@ RSpec.describe User, type: :model do
     expect(user.errors[:email]).to include("はすでに存在します")
   end
 
+  it "passwordとpassword_confirmationが一致しない" do
+    user= User.new(
+      email: "foo@example.com",
+      password: "123456",
+      password_confirmation: "1234567"
+    )
+    user.valid?
+    expect(user).to be_invalid
+  end
+
 end
