@@ -46,7 +46,13 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     bcrypt (3.1.13)
+    better_errors (2.5.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.7.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -68,6 +74,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (1.0.1)
       rake (< 13.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -78,6 +85,7 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     database_cleaner (1.7.0)
+    debug_inspector (0.0.3)
     devise (4.6.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -177,6 +185,11 @@ GEM
       equatable (~> 0.6)
       tty-color (~> 0.5)
     pg (1.1.4)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     public_suffix (3.1.0)
     puma (3.12.1)
     rack (2.0.7)
@@ -321,6 +334,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   bootsnap (>= 1.1.0)
   bullet
   byebug
@@ -343,6 +358,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
   pg (>= 0.18, < 2.0)
+  pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
   ransack
