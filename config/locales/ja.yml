@@ -238,3 +238,8 @@ ja:
       name: 商品名
       images: 商品画像
       description: 商品説明
+    post:
+      images: 画像
+      content: 投稿内容
+      new: 新規投稿
+      edit: 編集

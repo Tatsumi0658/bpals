@@ -22,7 +22,7 @@
     - if current_profile.present? && @post.profile.id == current_profile.id
       = link_to "edit", edit_post_path(@post.id)
       = link_to "destroy", post_path(@post.id), method: :delete, data:{ confirm: "OK?" }
-  h3.comment-label = "コメント"
+  h3.comment-label = t('view.comments')
   #post_comments_area.comments
     == render partial: "post_comments/index", locals:{ post_comments: @post_comments, post: @post }
 

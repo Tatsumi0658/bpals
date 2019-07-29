@@ -4,14 +4,14 @@
       .error_msg = msg
       br
   .field
-    = f.label :images, class:"form-label"
+    .form-label = t('view.post.images')
     = f.file_field :images, multiple: true, class:"form-item__file"
     = f.file_field :images, multiple: true, class:"form-item__file"
     = f.file_field :images, multiple: true, class:"form-item__file"
   br
   .field
-    = f.label :content, class:"form-label"
+    .form-label = t('view.post.content')
     = f.text_area :content, class:"form-item__textarea"
   br
   .actions
-    = f.submit "post", class:"btn btn-success"
+    = f.submit t('view.submit'), class:"btn btn-success"
