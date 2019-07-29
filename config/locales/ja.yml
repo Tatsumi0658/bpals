@@ -243,3 +243,6 @@ ja:
       content: 投稿内容
       new: 新規投稿
       edit: 編集
+    favorite:
+      favorite: お気に入り登録
+      non favorite: お気に入り解除

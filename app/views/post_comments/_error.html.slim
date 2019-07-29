@@ -6,4 +6,4 @@ ul.comment-list
         = posc.profile.nickname
         p.comment = posc.content
         = link_to "delete", post_post_comment_path(posc.post_id, posc.id), method: :delete, id:"delete_comment", remote: true, class:"btn btn-delete"
-p.error_msg = "入力してください"
+p.error_msg = t('view.nil_error')

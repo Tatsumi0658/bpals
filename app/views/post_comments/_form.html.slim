@@ -1,7 +1,7 @@
 = form_with(model: [post, post_comment]) do |f|
   .field
-    = f.label :content, class:"form-label"
+    .form-control = t('view.post comments')
     = f.text_field :content, class:"form-item"
   br
   .actions
-    = f.submit "post", class:"btn btn-success"
+    = f.submit t('view.submit'), class:"btn btn-success"
