@@ -207,6 +207,9 @@ ja:
     pm: 午後
   view:
     comments: コメント
+    post comments: コメントする
+    submit: 送信
+    nil_error: 入力してください
     profile:
       nickname: ニックネーム
       icon: アイコン

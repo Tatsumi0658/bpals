@@ -6,4 +6,4 @@ ul.comment-list
         = proc.profile.nickname
         p.comment = proc.content
         = link_to "delete", product_product_comment_path(proc.product_id, proc.id), method: :delete, id:"delete_comment", remote: true, class:"btn btn-delete"
-p.error_msg = "入力してください"
+p.error_msg = t('view.nil_error')
