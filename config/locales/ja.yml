@@ -206,6 +206,7 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   view:
+    comments: コメント
     profile:
       nickname: ニックネーム
       icon: アイコン
@@ -227,4 +228,10 @@ ja:
       other: その他
       parsonal info: 個人情報
       edit profile: プロフィール編集
-      set profile: プロフィール設定 
+      set profile: プロフィール設定
+    product:
+      new: 商品登録
+      edit: 登録情報編集
+      name: 商品名
+      images: 商品画像
+      description: 商品説明

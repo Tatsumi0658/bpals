@@ -11,9 +11,9 @@
                 span.images-label
       .product-desc
         h2.product-name = @product.name
-        h3.product-label = "説明"
+        h3.product-label = t('view.product.description')
         p.product-text = @product.description
-  h3.comment-label = "コメント"
+  h3.comment-label = t('view.comments')
   #product_comments_area.comments
     == render partial:'product_comments/index', locals:{ product_comments: @product_comments, product: @product }
 

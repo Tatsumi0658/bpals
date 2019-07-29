@@ -4,18 +4,18 @@
       .error_msg = msg
       br
   .field
-    = f.label :name, class:"form-label"
+    .form-label = t('view.product.name')
     = f.text_field :name, class:"form-item"
   br
   .field
-    = f.label :product_images, class:"form-label"
+    .form-label = t('view.product.images')
     = f.file_field :product_images, multiple: true, class:"form-item__file"
     = f.file_field :product_images, multiple: true, class:"form-item__file"
     = f.file_field :product_images, multiple: true, class:"form-item__file"
   br
   .field
-    = f.label :description, class:"form-label"
+    .form-label = t('view.product.description')
     = f.text_area :description, class:"form-item__textarea"
   br
   .actions
-    = f.submit "post", class:"btn btn-success"
+    = f.submit "OK", class:"btn btn-success"
