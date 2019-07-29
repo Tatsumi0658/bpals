@@ -205,3 +205,23 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  view:
+    profile:
+      nickname: ニックネーム
+      icon: アイコン
+      age: 年齢
+      skintype: 肌質
+      purpose: 利用シーン
+      late 10's ~ early 20's: 10代後半 ~ 20代前半
+      late 20's: 20代後半
+      early 30's: 30代前半
+      late 30's~: 30代後半 ~
+      normal: 普通肌
+      dry: 乾燥肌
+      oily: 脂性肌
+      mixed: 混合肌
+      unknown: わからない
+      business: ビジネス
+      fashion: ファッション
+      cosplay: コスプレ
+      other: その他

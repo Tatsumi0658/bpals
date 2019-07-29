@@ -4,42 +4,43 @@
       .error_msg = msg
       br
   .field
-    = f.label :nickname, class:"form-label"
+    .form-label = t('view.profile.nickname')
     = f.text_field :nickname, class:"form-item"
   br
   .field
-    = f.label :image, class:"form-label"
+    .form-label =  t('view.profile.icon')
     = f.file_field :image, class:"form-item__file"
   br
   .field
-    = f.label :age, class:"form-label"
+    .form-label = t('view.profile.age')
     = f.radio_button :age, 1
-    = f.label :age, "10代~20代前半", class:"form-label__radio"
+    = f.label :age, t("view.profile.late 10's ~ early 20's"), class:"form-label__radio"
     = f.radio_button :age, 2
-    = f.label :age, "20代後半", class:"form-label__radio"
+    = f.label :age, t("view.profile.late 20's"), class:"form-label__radio"
     = f.radio_button :age, 3
-    = f.label :age, "30代前半", class:"form-label__radio"
+    = f.label :age, t("view.profile.early 30's"), class:"form-label__radio"
     = f.radio_button :age, 4
-    = f.label :age, "30代後半以上", class:"form-label__radio"
-  br
-  field
-    = f.label :skintype, class:"form-label"
-    = f.radio_button :skintype, 1
-    = f.label :skintype, "普通肌", class:"form-label__radio"
-    = f.radio_button :skintype, 2
-    = f.label :skintype, "乾燥肌", class:"form-label__radio"
-    = f.radio_button :skintype, 3
-    = f.label :skintype, "脂性肌", class:"form-label__radio"
-    = f.radio_button :skintype, 4
-    = f.label :skintype, "混合肌", class:"form-label__radio"
-    = f.radio_button :skintype, 5
-    = f.label :skintype, "わからない", class:"form-label__radio"
+    = f.label :age, t("view.profile.late 30's~"), class:"form-label__radio"
   br
   .field
-    = f.label :purpose_ids, "利用シーン", class:"form-label"
+    .form-label = t('view.profile.skintype')
+    = f.radio_button :skintype, 1
+    = f.label :skintype, t('view.profile.normal'), class:"form-label__radio"
+    = f.radio_button :skintype, 2
+    = f.label :skintype, t('view.profile.dry'), class:"form-label__radio"
+    = f.radio_button :skintype, 3
+    = f.label :skintype, t('view.profile.oily'), class:"form-label__radio"
+    = f.radio_button :skintype, 4
+    = f.label :skintype, t('view.profile.mixed'), class:"form-label__radio"
+    = f.radio_button :skintype, 5
+    = f.label :skintype, t('view.profile.unknown'), class:"form-label__radio"
+  br
+  .field
+    .form-label = t('view.profile.purpose')
+    = f.label :purpose_ids
       - Purpose.all.each do |purpose|
         = f.check_box :purpose_ids,{ multiple: true, checked: purpose[:checked], include_hidden: false}, purpose[:id]
         = purpose.purpose
   br
   .actions
-    = f.submit "post", class:"btn btn-success"
+    = f.submit "OK", class:"btn btn-success"
