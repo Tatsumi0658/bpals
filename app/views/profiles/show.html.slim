@@ -14,6 +14,6 @@
           br
         - if current_profile.present? && @profile.id == current_profile.id
           .link-list
-            = link_to "プロフィール編集", edit_profile_path(current_profile.id), class:"mypage-link"
+            = link_to t('view.profile.edit profile'), edit_profile_path(current_profile.id), class:"mypage-link"
             nsbp
-            = link_to "個人情報", edit_user_registration_path, class:"mypage-link"
+            = link_to t('view.profile.parsonal info'), edit_user_registration_path, class:"mypage-link"
