@@ -7,6 +7,18 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      profile: プロフィール
+      post: 投稿
+      product: 商品
+    attributes:
+      profile:
+        nickname: ニックネーム
+      post:
+        images: 画像
+      product:
+        name: 商品名
+        images: 商品画像
   date:
     abbr_day_names:
     - 日
@@ -246,3 +258,6 @@ ja:
     favorite:
       favorite: お気に入り登録
       non favorite: お気に入り解除
+    user:
+      to administration: 管理者へ変更
+      to general: 一般へ変更
