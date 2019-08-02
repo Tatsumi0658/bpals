@@ -80,21 +80,7 @@ ul{
   color: #fff;
   font-size: 36px;
 }
-@media screen and (min-width: 768px){
-  .product, .profile{
-    display: flex;
-    justify-content: space-between;
-  }
-  .product-desc{
-    width: calc(100% - 430px);
-  }
-  .profile-desc{
-    width: calc(100% - 285px);
-  }
-  .btn-plus{
-    right: 20%;
-  }
-}
+
 .profile{
   max-width: 500px;
   margin: 0 auto;
@@ -187,17 +173,27 @@ ul{
   background-color: red;
   border-radius: 15px;
   color: #fff;
+  display: block;
+  max-width: 450px;
+  margin: 10px auto 0;
   opacity: 0.8;
   padding: 20px;
+  text-align: center;
   text-decoration: none;
+  width: 80%;
 }
 .btn-facebook{
   background-color: navy;
   border-radius: 15px;
   color: #fff;
+  display: block;
+  max-width: 450px;
+  margin: 10px auto 0;
   opacity: 0.8;
   padding: 20px;
+  text-align: center;
   text-decoration: none;
+  width: 80%;
 }
 
 #drawer{
@@ -358,4 +354,43 @@ ul{
   border-radius: 10px;
   padding: 3px 10px;
   width: 50%;
+}
+@media screen and (max-width:767px){
+  .login-form{
+    padding-bottom: 30px;
+    border-bottom: .5px solid #ccc;
+  }
+  .sns-login{
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 768px){
+  .product, .profile{
+    display: flex;
+    justify-content: space-between;
+  }
+  .product-desc{
+    width: calc(100% - 430px);
+  }
+  .profile-desc{
+    width: calc(100% - 285px);
+  }
+  .btn-plus{
+    right: 20%;
+  }
+  .login-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .login-form{
+    border-right: .5px solid #ccc;
+    width: 40%;
+  }
+  .sns-login{
+    width: 59%;
+  }
+  .btn-google, .btn-facebook{
+    margin: 10px auto;
+    width: 50%;
+  }
 }
