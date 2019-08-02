@@ -6,11 +6,11 @@ h2
       .field
         = f.label :email
         br
-        = f.email_field :email, autofocus: true, autocomplete: "email"
+        = f.email_field :email, autofocus: true, autocomplete: "email", class:"form-item"
       .field
         = f.label :password
         br
-        = f.password_field :password, autocomplete: "current-password"
+        = f.password_field :password, autocomplete: "current-password", class:"form-item"
       - if devise_mapping.rememberable?
         .field
           = f.check_box :remember_me
