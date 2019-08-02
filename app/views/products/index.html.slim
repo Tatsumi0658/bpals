@@ -1,7 +1,8 @@
 .container
-  = form_tag search_products_path, method: :get do
-    = text_field_tag :keyword,"",class:"form-control"
-    = submit_tag
+  .search-container
+    = form_tag search_products_path, method: :get do
+      = text_field_tag :keyword,"", placeholder:t('view.search'), class:"form-control__search"
+      = submit_tag "search"
   ul.product-list
     - @products.each do |product|
       li.product-item

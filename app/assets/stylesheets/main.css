@@ -4,7 +4,7 @@ ul{
 .post-list{
   display: flex;
   flex-wrap: wrap;
-  margin: 20px auto 0;
+  margin: 0 auto;
   /*justify-content: space-between;*/
 }
 .post-item{
@@ -69,6 +69,17 @@ ul{
   margin: 0 3px;
   font-size: .9rem;
 }
+.btn-plus{
+  position: fixed;
+  bottom: 30px;
+  right: 3%;
+  padding: 8px 15px 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  background-color: #ccc;
+  color: #fff;
+  font-size: 36px;
+}
 @media screen and (min-width: 768px){
   .product, .profile{
     display: flex;
@@ -79,6 +90,9 @@ ul{
   }
   .profile-desc{
     width: calc(100% - 285px);
+  }
+  .btn-plus{
+    right: 20%;
   }
 }
 .profile{
@@ -304,17 +318,6 @@ ul{
   font-size: .8rem;
   margin:0 5px 0 0;
 }
-.btn-plus{
-  position: fixed;
-  bottom: 30px;
-  right: 20%;
-  padding: 8px 15px 14px;
-  border-radius: 30px;
-  text-decoration: none;
-  background-color: #ccc;
-  color: #fff;
-  font-size: 36px;
-}
 #post-image__1, #post-image__2{
   display: none;
 }
@@ -345,4 +348,14 @@ ul{
 }
 .profile-postlist{
   margin-top: 50px;
+}
+.search-container{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form-control__search{
+  border: .5px solid #eee;
+  border-radius: 10px;
+  padding: 3px 10px;
+  width: 50%;
 }
