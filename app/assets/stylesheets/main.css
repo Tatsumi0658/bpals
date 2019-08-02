@@ -4,7 +4,7 @@ ul{
 .post-list{
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 20px auto 0;
   /*justify-content: space-between;*/
 }
 .post-item{
@@ -36,7 +36,14 @@ ul{
 .product-item{
   padding: 14px 12px;
 }
+.list-icon__square{
+  height: 80px;
+  margin: 0 15px 0 0;
+  vertical-align: middle;
+  width: 80px;
+}
 .list-icon{
+  border-radius: 40px;
   height: 80px;
   margin: 0 15px 0 0;
   vertical-align: middle;
@@ -62,9 +69,17 @@ ul{
   margin: 0 3px;
   font-size: .9rem;
 }
-.product, .profile{
-  display: flex;
-  justify-content: space-between;
+@media screen and (min-width: 768px){
+  .product, .profile{
+    display: flex;
+    justify-content: space-between;
+  }
+  .product-desc{
+    width: calc(100% - 430px);
+  }
+  .profile-desc{
+    width: calc(100% - 285px);
+  }
 }
 .profile{
   max-width: 500px;
@@ -74,24 +89,17 @@ ul{
 .product-thum{
   /*ここは幅を考えなきゃ*/
 }
-.profile-thum{
-  margin: 0 0 0 10px;
-}
 .product-image{
   max-width: 400px;
 }
 
 .profile-image{
-  width: 150px;
-  height: 150px;
+  border-radius: 125px;
+  height: 250px;
   object-fit: cover;
+  width: 250px;
 }
-.product-desc{
-  width: calc(100% - 430px);
-}
-.profile-desc{
-  width: calc(100% - 190px);
-}
+
 .product-name{
   font-size: 3.0rem;
   font-weight: bold;
@@ -109,6 +117,7 @@ ul{
   margin: 48px 0 12px;;
 }
 .comment-icon{
+  border-radius: 15px;
   height: 30px;
   margin: 0 8px 0 0;
   vertical-align: middle;
@@ -131,6 +140,7 @@ ul{
   text-decoration: none;
 }
 .post-icon{
+  border-radius: 25px;
   height: 50px;
   margin: 0 8px 0 0;
   vertical-align: middle;
@@ -332,4 +342,7 @@ ul{
 }
 .radio-images{
   display:none;
+}
+.profile-postlist{
+  margin-top: 50px;
 }

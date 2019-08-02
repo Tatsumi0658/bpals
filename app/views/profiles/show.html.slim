@@ -17,3 +17,14 @@
             = link_to t('view.profile.edit profile'), edit_profile_path(current_profile.id), class:"mypage-link"
             nsbp
             = link_to t('view.profile.parsonal info'), edit_user_registration_path, class:"mypage-link"
+
+  .profile-postlist
+    ul.post-list
+      - @posts.each do |post|
+        li.post-item
+          - if video_check(post.images[0]) == true
+            = link_to post_path(post.id) do
+              video.post-wrap src = post.images[0] controls = true
+          - else
+            = link_to post_path(post.id) do
+              img.post-wrap src = post.images[0]

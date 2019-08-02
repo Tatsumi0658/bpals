@@ -26,6 +26,7 @@ class ProfilesController < ApplicationController
 
   def show
     @purposes = ProfilePurposeRelationship.where(profile_id: @profile.id).all
+    @posts = Post.where(profile_id: @profile.id).all
   end
 
   def edit
