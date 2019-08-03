@@ -317,9 +317,11 @@ ul{
   margin: 12px 0 0 0;
 }
 .mypage-link{
+  color: #444;
   display: inline-block;
   font-size: .8rem;
   margin:0 5px 0 0;
+  text-decoration: none;
 }
 #post-image__1, #post-image__2{
   display: none;
@@ -390,13 +392,13 @@ footer{
 }
 .footer-item, .slash{
   color: #777;
-  font-size: .9rem;
+  font-size: .8rem;
   text-decoration: none;
 }
 .company-info{
   color: #777;
   font-size: .6rem;
-  margin: 20px 0 0 0;
+  margin: 12px 0 0 0;
 }
 .user-list{
   width: 100%;
@@ -422,6 +424,12 @@ footer{
   font-size: 0.7rem;
   padding: 5px 10px;
   text-decoration: none;
+}
+.far.fa-heart{
+  color: #aaa;
+}
+.fas.fa-heart{
+  color: red;
 }
 @media screen and (max-width:767px){
   .login-form{
