@@ -223,6 +223,8 @@ ja:
     submit: 送信
     nil_error: 入力してください
     search: キーワードを入力
+    terms_of_service: 利用規約
+    get: 検索
     profile:
       nickname: ニックネーム
       icon: アイコン

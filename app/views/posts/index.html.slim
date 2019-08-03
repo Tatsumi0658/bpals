@@ -2,7 +2,7 @@
   .search-container
     = form_tag search_posts_path, method: :get do
       = text_field_tag :search, "", placeholder:t('view.search'),class:"form-control__search"
-      = submit_tag "search"
+      = submit_tag t('view.get')
 
   ul.post-list
     - @posts.each do |post|

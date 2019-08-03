@@ -2,7 +2,7 @@
   .search-container
     = form_tag search_products_path, method: :get do
       = text_field_tag :keyword,"", placeholder:t('view.search'), class:"form-control__search"
-      = submit_tag "search"
+      = submit_tag t('view.get')
   ul.product-list
     - @products.each do |product|
       li.product-item

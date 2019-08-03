@@ -85,7 +85,7 @@ ul{
   padding: 7px 12px;
   border-radius: 20px;
   text-decoration: none;
-  background-color: #ccc;
+  background-color: #444;
   color: #fff;
   font-size: 16px;
 }
@@ -297,7 +297,8 @@ ul{
 }
 .main{
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
+  min-height: 77vh;
   padding: 5px;
 }
 .tag-list__show{
@@ -375,6 +376,26 @@ form.new_user{
   font-family: Times;
   letter-spacing: .2em;
   text-decoration: none;
+}
+footer{
+  background-color: #f9f9f9 !important;
+  text-align: center;
+}
+.footer-container{
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px 0;
+  width: 100%;
+}
+.footer-item, .slash{
+  color: #777;
+  font-size: .9rem;
+  text-decoration: none;
+}
+.company-info{
+  color: #777;
+  font-size: .6rem;
+  margin: 20px 0 0 0;
 }
 @media screen and (max-width:767px){
   .login-form{

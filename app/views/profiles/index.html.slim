@@ -2,7 +2,7 @@
   .search-container
     = search_form_for @q do |f|
       = f.search_field :nickname_cont, class:"form-control__search", placeholder:t('view.search')
-      = f.submit "search"
+      = f.submit t('view.get')
   ul.profile-list
     - @profiles.each do |profile|
       li.profile-item
