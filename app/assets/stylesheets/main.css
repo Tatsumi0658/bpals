@@ -1,8 +1,9 @@
 body{
+  color: #444;
   font-size: 1.4em;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Verdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   line-height:  1.6;
   letter-spacing: .08em;
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Verdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   word-break: break-all;
 }
 ul{
@@ -397,6 +398,31 @@ footer{
   font-size: .6rem;
   margin: 20px 0 0 0;
 }
+.user-list{
+  width: 100%;
+  text-align: center;
+}
+.user-list th, .user-list td{
+  vertical-align: middle;
+}
+.user-list th:nth-child(1), .user-list td:nth-child(1){
+  width: 40%;
+}
+.user-list td:nth-child(1){
+  text-align: left;
+}
+.user-head, .user-item{
+  border-bottom: .5px solid #ccc;
+  padding: 10px 0;
+}
+.user-item__link{
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  color: #444;
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  text-decoration: none;
+}
 @media screen and (max-width:767px){
   .login-form{
     padding-bottom: 30px;
@@ -417,6 +443,9 @@ footer{
     position: absolute;
     right: 8px;
     top: 35px;
+  }
+  .user-list{
+    font-size: .7rem;
   }
 }
 @media screen and (min-width: 768px){
