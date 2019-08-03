@@ -355,6 +355,9 @@ ul{
   padding: 3px 10px;
   width: 50%;
 }
+form.new_user{
+  margin-bottom: 20px;
+}
 @media screen and (max-width:767px){
   .login-form{
     padding-bottom: 30px;
@@ -384,10 +387,11 @@ ul{
   }
   .login-form{
     border-right: .5px solid #ccc;
+    padding-right: 3%;
     width: 40%;
   }
   .sns-login{
-    width: 59%;
+    width: 56%;
   }
   .btn-google, .btn-facebook{
     margin: 10px auto;
