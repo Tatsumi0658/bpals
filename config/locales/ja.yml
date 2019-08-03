@@ -219,7 +219,7 @@ ja:
     pm: 午後
   view:
     comments: コメント
-    post comments: コメントする
+    post comments: コメントを入力
     submit: 送信
     nil_error: 入力してください
     search: キーワードを入力

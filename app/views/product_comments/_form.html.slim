@@ -4,8 +4,7 @@
       .error_msg = msg
       br
   .field
-    .form-label = t('view.post comments')
-    = f.text_field :content, class:"form-item"
+    = f.text_field :content, placeholder:t('view.post comments'), class:"form-item"
   br
   .actions
     = f.submit t('view.submit'), class:"btn btn-success"
