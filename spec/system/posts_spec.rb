@@ -23,11 +23,11 @@ RSpec.describe "Posts", type: :system do
     click_on(class: "btn btn-plus")
 
     attach_file "post[images][]", "#{Rails.root}/spec/system/file/kkk.jpg", match: :first
-    click_on "post"
+    click_on "送信"
     expect(page).to have_current_path(posts_path)
   end
 
-  it "Post投稿" do
+  it "Post投稿エラー後、投稿" do
     visit new_user_session_path
     fill_in "user_email", with: "foobar@example.com"
     fill_in "user_password", with: "123456"
@@ -35,11 +35,11 @@ RSpec.describe "Posts", type: :system do
 
     click_on(class: "btn btn-plus")
 
-    click_on "post"
-    expect(page).to have_content "Imagesを入力してください"
+    click_on "送信"
+    expect(page).to have_content "画像を入力してください"
 
     attach_file "post[images][]", "#{Rails.root}/spec/system/file/kkk.jpg", match: :first
-    click_on "post"
+    click_on "送信"
     expect(page).to have_current_path(posts_path)
   end
 end

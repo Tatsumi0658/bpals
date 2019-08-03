@@ -24,27 +24,28 @@ RSpec.describe "Products", type: :system do
     attach_file "product[product_images][]", "#{Rails.root}/spec/system/file/kkk.jpg", match: :first
     fill_in "product[description]", with: "sample"
 
-    click_on "post"
+    click_on "送信"
 
     expect(page).to have_current_path(products_path)
   end
 
-  it "Productの名前を未入力エラー後、入力" do
+  it "Productの名前、画像を未入力エラー後、入力" do
     visit new_user_session_path
     fill_in "user_email", with: "foobar@example.com"
     fill_in "user_password", with: "123456"
     click_on "Log in"
 
     visit new_product_path
-    click_on "post"
-    expect(page).to have_content "Nameを入力してください"
+    click_on "送信"
+    expect(page).to have_content "商品名を入力してください"
+    expect(page).to have_content "商品画像を入力してください"
 
     visit new_product_path
     fill_in "product[name]", with: "sample_product"
     attach_file "product[product_images][]", "#{Rails.root}/spec/system/file/kkk.jpg", match: :first
     fill_in "product[description]", with: "sample"
 
-    click_on "post"
+    click_on "送信"
 
     expect(page).to have_current_path(products_path)
   end

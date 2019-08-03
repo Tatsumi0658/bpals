@@ -26,7 +26,7 @@ RSpec.describe "Comments", type: :system do
     find('ul.post-list > li.post-item:nth-child(1) > a').click
 
     fill_in "post_comment[content]", with: "サンプル"
-    click_on "post"
+    click_on "送信"
 
     sleep 5
 
@@ -44,11 +44,11 @@ RSpec.describe "Comments", type: :system do
     find('ul.post-list > li.post-item:nth-child(1) > a').click
 
     fill_in "post_comment[content]", with: "サンプル"
-    click_on "post"
+    click_on "送信"
 
     sleep 5
 
-    click_on "delete"
+    click_on "×"
 
     expect(page).not_to have_content "サンプル"
   end
@@ -64,13 +64,13 @@ RSpec.describe "Comments", type: :system do
     attach_file "product[product_images][]", "#{Rails.root}/spec/system/file/kkk.jpg", match: :first
     fill_in "product[description]", with: "sample"
 
-    click_on "post"
+    click_on "送信"
 
     visit products_path
     find('ul.product-list > li.product-item:nth-child(1) > a').click
 
     fill_in "product_comment[content]", with: "サンプル"
-    click_on "post"
+    click_on "送信"
 
     sleep 5
 
@@ -88,17 +88,17 @@ RSpec.describe "Comments", type: :system do
     attach_file "product[product_images][]", "#{Rails.root}/spec/system/file/kkk.jpg", match: :first
     fill_in "product[description]", with: "sample"
 
-    click_on "post"
+    click_on "送信"
 
     visit products_path
     find('ul.product-list > li.product-item:nth-child(1) > a').click
 
     fill_in "product_comment[content]", with: "サンプル"
-    click_on "post"
+    click_on "送信"
 
     sleep 5
 
-    click_on "delete"
+    click_on "×"
     expect(page).not_to have_content "サンプル"
   end
 
