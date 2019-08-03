@@ -14,7 +14,7 @@ html
       .header
         .header-inner
           .header-wrap
-            a href = "/" = "B-PALs"
+            a.title-link href = "/" = "B-PALs"
           #nav-drawer
             input id="nav-input" type="checkbox" class="nav-unshown"
             label id="nav-open" for="nav-input"
@@ -33,17 +33,17 @@ html
                   - if current_user.present? && current_profile.present?
                     li.menu-item
                       = link_to "my page", profile_path(current_profile.id), class:"menu-link"
+                  - if user_signed_in?
+                    li.menu-item
+                      = link_to "Logout", destroy_user_session_path, method: :delete, class: "menu-link"
+                  - else
+                    li.menu-item
+                      = link_to "Sign Up", new_user_registration_path, class: "menu-link"
+                    li.menu-item
+                      = link_to "Sign In", new_user_session_path, class: "menu-link"
 
     main.main
       = yield
-    br
-    - if user_signed_in?
-      = link_to "Logout", destroy_user_session_path, method: :delete
-    - else
-      = link_to "Sign Up", new_user_registration_path
-      = link_to "Sign In", new_user_session_path
-      = link_to 'Googleでサインアップしてね', user_google_omniauth_authorize_path, method: :post
-      = link_to 'facebookでサインアップしてね', user_facebook_omniauth_authorize_path, method: :post
 
 javascript:
   $(function(){

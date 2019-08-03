@@ -1,3 +1,10 @@
+body{
+  font-size: 1.4em;
+  line-height:  1.6;
+  letter-spacing: .08em;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Verdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  word-break: break-all;
+}
 ul{
   list-style:none;
 }
@@ -31,7 +38,7 @@ ul{
   border-bottom: 1px solid #ddd;
 }
 .profile-item{
-  padding: 14px 12px 30px;
+  padding: 14px 12px 40px;
 }
 .product-item{
   padding: 14px 12px;
@@ -50,6 +57,7 @@ ul{
   width: 80px;
 }
 .list-link{
+  color: #444;
   display: block;
   position:relative;
   width: 100%;
@@ -59,12 +67,13 @@ ul{
   display: flex;
   flex-wrap: wrap;
   float: right;
+  margin: 3px 0 0 0;
 }
 .tag-item{
   overflow: hidden;
   position: relative;
   padding: 5px 15px;
-  border: solid 1px #ccc;
+  border: solid .5px #ccc;
   border-radius: 10px;
   margin: 0 3px;
   font-size: .9rem;
@@ -73,12 +82,12 @@ ul{
   position: fixed;
   bottom: 30px;
   right: 3%;
-  padding: 8px 15px 14px;
-  border-radius: 30px;
+  padding: 7px 12px;
+  border-radius: 20px;
   text-decoration: none;
   background-color: #ccc;
   color: #fff;
-  font-size: 36px;
+  font-size: 16px;
 }
 
 .profile{
@@ -101,9 +110,9 @@ ul{
 }
 
 .product-name{
-  font-size: 3.0rem;
+  font-size: 2.0rem;
   font-weight: bold;
-  margin: 12px 0 36px;
+  margin: 6px 0 12px;
 }
 .profile-name{
   font-size: 1.8rem;
@@ -127,17 +136,14 @@ ul{
   margin: 18px 0 12px;
 }
 .comment-item{
-  padding: 6px 0 30px;
-  word-break: break-all;
+  padding: 6px 0;
 }
 .btn-delete{
-  background-color: red;
-  border-radius: 5px;
-  color: #fff;
+  color: #aaa;
   display: block;
   float: right;
-  opacity: 0.7;
-  padding: 5px;
+  font-size: .8rem;
+  padding: 1px 5px;
   text-decoration: none;
 }
 .post-icon{
@@ -205,12 +211,6 @@ ul{
   display: none;
 }
 
-#nav-drawer {
-  position: absolute;
-  top: 15px;
-  right: 8px;
-}
-
 .nav-unshown {
   display:none;
 }
@@ -227,7 +227,7 @@ ul{
     height: 2px;
     width: 25px;
     border-radius: 3px;
-    background: #555;
+    background: #aaa;
     display: block;
     content: '';
     cursor: pointer;
@@ -279,7 +279,7 @@ ul{
 }
 
 .header-inner{
-  padding: 15px;
+  padding: 25px 15px;
 }
 .menu{
   padding: 50px 30px;
@@ -288,9 +288,11 @@ ul{
   margin: 30px 0;
 }
 .menu-link{
+  color: #444;
   display: block;
   padding: 14px 0;
   position: relative;
+  text-decoration: none;
   width: 100%;
 }
 .main{
@@ -306,6 +308,7 @@ ul{
   border-radius: 10px;
   display: inline-block;
   font-size:  .9rem;
+  margin: 1px 0;
   padding: 5px;
 }
 .link-list{
@@ -363,6 +366,16 @@ form.new_user{
 .comment-list{
   margin-bottom: 20px;
 }
+.header-wrap{
+  text-align: center;
+}
+.title-link{
+  color: #222;
+  font-size: 1.6rem;
+  font-family: Times;
+  letter-spacing: .2em;
+  text-decoration: none;
+}
 @media screen and (max-width:767px){
   .login-form{
     padding-bottom: 30px;
@@ -370,6 +383,19 @@ form.new_user{
   }
   .sns-login{
     margin-top: 30px;
+  }
+  .tag-item{
+    font-size: .4rem;
+    margin: 0 1px;
+    padding: 5px;
+  }
+  .profile-thum{
+    text-align: center;
+  }
+  #nav-drawer {
+    position: absolute;
+    right: 8px;
+    top: 35px;
   }
 }
 @media screen and (min-width: 768px){
@@ -401,5 +427,10 @@ form.new_user{
   .btn-google, .btn-facebook{
     margin: 10px auto;
     width: 50%;
+  }
+  #nav-drawer {
+    position: absolute;
+    right: 50px;
+    top: 35px;
   }
 }

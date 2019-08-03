@@ -4,5 +4,6 @@ ul.comment-list
       li.comment-item
         img.comment-icon src = proc.profile.image
         = proc.profile.nickname
+        - if current_profile.present? && proc.profile_id == current_profile.id
+          = link_to "×", product_product_comment_path(proc.product_id, proc.id), method: :delete, id:"delete_comment", remote: true, class:"btn btn-delete"
         p.comment = proc.content
-        = link_to "delete", product_product_comment_path(proc.product_id, proc.id), method: :delete, id:"delete_comment", remote: true, class:"btn btn-delete"

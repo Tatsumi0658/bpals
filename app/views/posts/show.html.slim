@@ -16,7 +16,6 @@
             input class="radio-images" type="radio" name="images" value=i
             span.images-label
     br
-    p.post-text = @post.content
     = change_hash(@post.content)
     == render partial: "favorites/favorite", locals:{ favorite: @favorite, post: @post }
     - if current_profile.present? && @post.profile.id == current_profile.id
