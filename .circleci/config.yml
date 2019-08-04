@@ -10,7 +10,7 @@ jobs:
       - image: circleci/ruby:2.6.3-node-browsers
         environment:
           PGHOST: localhost
-          PGUSER: keijiban
+          PGUSER: bpals
           RAILS_ENV: test
           DATABASE_HOST: 127.0.0.1
           BUNDLER_VERSION: 2.0.2
