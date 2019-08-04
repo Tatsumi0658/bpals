@@ -57,7 +57,6 @@ jobs:
       # Database setup
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: yarn
-      - run: bundle exec bin/webpack
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
