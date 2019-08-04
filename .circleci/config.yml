@@ -11,6 +11,11 @@ jobs:
         environment:
             # ①
             BUNDLER_VERSION: 2.0.2
+      - image: postgres:9.6.3
+        environment:
+          POSTGRES_USER: bpals
+          POSTGRES_DB: bpals_test
+          POSTGRES_PASSWORD: ""
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -43,12 +48,16 @@ jobs:
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
+
       - save_cache:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run: yarn
+      - run: bundle exec bin/webpack
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
