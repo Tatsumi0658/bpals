@@ -9,8 +9,12 @@ jobs:
       # specify the version you desire here
       - image: circleci/ruby:2.6.3-node-browsers
         environment:
-            # ①
-            BUNDLER_VERSION: 2.0.2
+          PGHOST: localhost
+          PGUSER: keijiban
+          RAILS_ENV: test
+          DATABASE_HOST: 127.0.0.1
+          BUNDLER_VERSION: 2.0.2
+
       - image: postgres:9.6.3
         environment:
           POSTGRES_USER: bpals
