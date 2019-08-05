@@ -433,6 +433,15 @@ footer{
 .fas.fa-heart{
   color: red;
 }
+.paginater{
+  margin-top: 10px;
+  text-align: center;
+}
+.pagination a{
+  color: #aaa;
+  font-size: .92rem;
+  text-decoration: none;
+}
 @media screen and (max-width:767px){
   .login-form{
     padding-bottom: 30px;
