@@ -427,8 +427,9 @@ footer{
   padding: 5px 10px;
   text-decoration: none;
 }
-.far.fa-heart{
+.far.fa-heart, .fas.fa-edit.fa-lg, .fas.fa-trash-alt.fa-lg{
   color: #aaa;
+  margin: 4px 4px 4px 0;
 }
 .fas.fa-heart{
   color: red;

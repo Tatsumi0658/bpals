@@ -18,8 +18,10 @@
             span.images-label
     == render partial: "favorites/favorite", locals:{ favorite: @favorite, post: @post }
     - if current_profile.present? && @post.profile.id == current_profile.id
-      = link_to "edit", edit_post_path(@post.id)
-      = link_to "destroy", post_path(@post.id), method: :delete, data:{ confirm: "OK?" }
+      = link_to edit_post_path(@post.id)
+        i.fas.fa-edit.fa-lg
+      = link_to post_path(@post.id), method: :delete, data:{ confirm: "OK?" }
+        i.fas.fa-trash-alt.fa-lg
     br
     = change_hash(@post.content)
   h3.comment-label = t('view.comments')
