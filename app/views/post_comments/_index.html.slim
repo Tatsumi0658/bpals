@@ -2,7 +2,7 @@ ul.comment-list
   - post_comments.each do |posc|
     - if posc.id.present?
       li.comment-item
-        img.comment-icon src = posc.profile.image
+        img.comment-icon src = image_check(posc.profile.image)
         = posc.profile.nickname
         - if current_profile.present? && current_profile.id == posc.profile_id
           = link_to "×", post_post_comment_path(posc.post_id, posc.id), method: :delete, id:"delete_comment", remote: true, class:"btn btn-delete"

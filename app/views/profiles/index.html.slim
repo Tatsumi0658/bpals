@@ -7,7 +7,7 @@
     - @profiles.each do |profile|
       li.profile-item
         a.list-link href = profile_path(profile.id)
-          img.list-icon src = profile.image
+          img.list-icon src = image_check(profile.image)
           = profile.nickname
         ul.tag-list
           li.tag-item = judge_age(profile.age)

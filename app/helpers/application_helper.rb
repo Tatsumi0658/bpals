@@ -15,4 +15,12 @@ module ApplicationHelper
       separator: "|"
     }
   end
+
+  def image_check(image)
+    if image.present?
+      image
+    else
+      "/icon.png"
+    end
+  end
 end
