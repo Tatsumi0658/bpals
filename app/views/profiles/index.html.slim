@@ -2,7 +2,8 @@
   .search-container
     = search_form_for @q do |f|
       = f.search_field :nickname_cont, class:"form-control__search", placeholder:t('view.search')
-      = f.submit t('view.get')
+      = button_tag type:"submit", class:"search_button" do
+        i.fas.fa-search
   ul.profile-list
     - @profiles.each do |profile|
       li.profile-item

@@ -362,8 +362,9 @@ ul{
 }
 .form-control__search{
   border: .5px solid #eee;
-  border-radius: 10px;
-  padding: 3px 10px;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  padding: 6px 10px;
   width: 50%;
 }
 form.new_user{
@@ -442,6 +443,12 @@ footer{
   color: #aaa;
   font-size: .92rem;
   text-decoration: none;
+}
+.search_button{
+  border: .5px solid #eee;
+  border-left: none;
+  border-radius: 0px 10px 10px 0;
+  padding: 6px 10px 6px 9px;
 }
 @media screen and (max-width:767px){
   .login-form{
