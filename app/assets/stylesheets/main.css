@@ -166,16 +166,16 @@ ul{
   border: 0;
   border-bottom: solid 1px #ccc;
   margin: 10px 0;
+  max-width: 500px;
   padding: 5px 3px;
-  width: 250px;
+  width: 98%;
 }
 .form-item__textarea{
   border: solid 1px #999;
   height: 100px;
-  min-width: 300px;
+  max-width: 710px;
   padding: 5px 3px;
-  resize: auto;
-  width: 70%;
+  width: 98%;
 }
 .error_msg{
   color: red;
@@ -444,12 +444,30 @@ footer{
   font-size: .92rem;
   text-decoration: none;
 }
-.search_button{
+.btn-search{
   border: .5px solid #eee;
   border-left: none;
   border-radius: 0px 10px 10px 0;
   color: #444;
   padding: 6px 10px 6px 9px;
+}
+.btn-success{
+  background-color: #fff;
+  border: .5px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px 0 #aaa;
+  height: 44px;
+  max-width: 500px;
+  width: 100%;
+}
+.btn-success__textarea{
+  background-color: #fff;
+  border: .5px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px 0 #aaa;
+  height: 44px;
+  max-width: 720px;
+  width: 100%;
 }
 @media screen and (max-width:767px){
   .login-form{
