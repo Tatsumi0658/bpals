@@ -33,6 +33,7 @@ gem 'mini_magick', '~> 4.8'
 
 gem 'meta-tags'
 gem 'kaminari'
+gem 'fog-aws'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
