@@ -4,7 +4,6 @@ lock '3.6.0'
 set :application, 'bpals'
 set :repo_url, 'https://github.com/Tatsumi0658/bpals'
 
-set :branch, ENV['BRANCH']
 
 set :deploy_to, '/var/www/bpals'
 
