@@ -14,7 +14,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   end
 
   def size_range
-    1..2.megabytes
+    0..1.megabytes
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
