@@ -55,8 +55,7 @@ class PostsController < ApplicationController
     if tag = Hashtag.find_by(hashtag: params[:search])
       @hashs = PostHashtagRelationship.where(hashtag_id: tag.id)
     else
-      @posts = Post.all.includes(:profile)
-      render :index
+      @hashs = nil
     end
   end
 
