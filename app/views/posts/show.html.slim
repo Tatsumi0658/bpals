@@ -2,7 +2,7 @@
 .container
   .post
     .post-profile
-      = image_check(@post.profile.imagem, "post-icon")
+      = image_check(@post.profile.image, "post-icon")
       = @post.profile.nickname
       - @post.images.each_with_index do |post_img, i|
         div id = "post-image__#{i}"
