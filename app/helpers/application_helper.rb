@@ -20,7 +20,7 @@ module ApplicationHelper
     if image.present?
       image
     else
-      "= asset_path icon.png"
+      asset_path "icon.png"
     end
   end
 end
