@@ -2,7 +2,8 @@ ul.comment-list
   - product_comments.each do |proc|
     - if proc.id.present?
       li.comment-item
-        image_check(proc.profile.image)
+        img.comment-icon src = proc.profile.image
+        = image_check(proc.profile.image), class:
         = proc.profile.nickname
         - if current_profile.present? && proc.profile_id == current_profile.id
           = link_to "×", product_product_comment_path(proc.product_id, proc.id), method: :delete, id:"delete_comment", remote: true, class:"btn btn-delete"
