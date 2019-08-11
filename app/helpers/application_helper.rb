@@ -18,9 +18,9 @@ module ApplicationHelper
 
   def image_check(image)
     if image.present?
-      image
+      image_tag image.url, class: "list-icon"
     else
-      "/public/icon.png"
+      image_tag "/icon.png", class: "list-icon"
     end
   end
 end
