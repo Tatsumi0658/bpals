@@ -8,7 +8,7 @@
     - @profiles.each do |profile|
       li.profile-item
         a.list-link href = profile_path(profile.id)
-          = image_check(profile.image)
+          = image_check(profile.image, "list-icon")
           = profile.nickname
         ul.tag-list
           li.tag-item = judge_age(profile.age)

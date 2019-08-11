@@ -16,11 +16,11 @@ module ApplicationHelper
     }
   end
 
-  def image_check(image)
+  def image_check(image, class_name)
     if image.present?
-      image_tag image.url
+      image_tag image.url, class: class_name
     else
-      image_tag "/icon.png"
+      image_tag "/icon.png", class: class_name
     end
   end
 end
