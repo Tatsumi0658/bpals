@@ -206,6 +206,26 @@ ul{
   width: 80%;
 }
 
+.service-container h2, .privacy-container h2{
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.stillness-item{
+  margin-bottom: 25px;
+}
+
+.less-content{
+  margin: 1rem 0 1rem 1rem;
+  font-size: 1.0rem;
+}
+
+.min-content{
+  margin: 1rem 0 1rem 2rem;
+  font-size: .9rem;
+}
+
 #drawer{
   position: relative;
 }

@@ -54,7 +54,9 @@ html
             span.slash = " / "
             = link_to "Sign In", new_user_session_path, class: "footer-item"
           span.slash = " / "
-          = link_to t('view.terms_of_service'),"",class:"footer-item"
+          = link_to t('view.terms_of_service'), pages_service_path, class:"footer-item"
+          span.slash = " / "
+          = link_to t('view.terms_of_privacy'), pages_privacy_path, class:"footer-item"
         .company-info
           |&copy; 2019 B-PALs
 
