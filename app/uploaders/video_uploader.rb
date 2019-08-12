@@ -8,7 +8,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   end
 
   def size_range
-    1..2.megabytes
+    0..1.megabytes
   end
 
   def extension_whitelist
