@@ -4,8 +4,6 @@ class PostsController < ApplicationController
   before_action :current_profile!, only:[:new, :create, :edit, :update, :destroy]
   def index
     @posts = Post.page(params[:page]).per(12).includes(:profile)
-    #@r = Post.ransack(params[:r])
-    #@posts = @r.result
   end
 
   def new
