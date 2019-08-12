@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   validates :product_images, presence: true
   mount_uploaders :product_images, ImageUploader
   has_many :product_comments, dependent: :destroy
+  validates_integrity_of :product_images
 
   scope :search_name, ->(word){ where('name LIKE ?', "%#{word}%") }
 end
