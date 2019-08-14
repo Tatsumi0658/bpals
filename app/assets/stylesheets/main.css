@@ -10,6 +10,8 @@ ul{
   list-style:none;
 }
 .post-list{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -64,6 +66,8 @@ ul{
   text-decoration: none;
 }
 .tag-list{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   float: right;
@@ -515,6 +519,8 @@ footer{
 }
 @media screen and (min-width: 768px){
   .product, .profile{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: space-between;
   }
@@ -528,6 +534,8 @@ footer{
     right: 20%;
   }
   .login-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
   }

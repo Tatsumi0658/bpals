@@ -1,2 +1,199 @@
-h1 Pages#about
-p Find me in app/views/pages/about.html.slim
+doctype html
+html
+  head
+    title Bpals
+    = display_meta_tags(default_meta_tags)
+    meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"
+  sass:
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary,
+    time, mark, audio, video
+      margin: 0
+      padding: 0
+      border: 0
+      outline: 0
+      font-size: 100%
+      vertical-align: baseline
+      background: transparent
+
+    body
+      color: #444
+      font-size: 1.4em
+      font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Verdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif
+      line-height:  1.6
+      letter-spacing: .08em
+      word-break: break-all
+    .hero
+      background-image: url("/jazmin-quaynor-FoeIOgztCXo-unsplash-white-white-min-min.jpeg")
+      background-size: cover
+      background-position: center
+      width: 100%
+      height: 100vh
+      text-align: center
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-pack: center
+      -ms-flex-pack: center
+      justify-content: center
+      -webkit-box-align: center
+      -ms-flex-align: center
+      align-items: center
+    .hero-content
+      background-color: #fff
+      color: #222
+      padding: 10px
+      opacity: .8
+      box-shadow: 0 3px 3px 0 #ccc
+    .hero h2
+      font-family: Times
+      font-size: 3.0rem
+    .hero p
+      font-size: 1.0rem
+    .service-desc, .service-use
+      text-align: center
+      margin: 0 auto
+    .service-desc p
+      text-align: left
+    .use-item
+      margin: 1.0rem
+      padding: .5rem
+    .use-item h4
+      font-size: 2.0rem
+      margin: .5rem 0 1.0rem 0
+    .use-item img
+      width: 140px
+    .use-item p
+      font-size: 1.0rem
+      padding: .7rem
+    .link-box
+      margin: 0 auto 5.0rem
+    .btn-regist
+      display: block
+      height: 36px
+      width: 96%
+      max-width: 1000px
+      background-color: #444
+      border-radius: 10px
+      box-shadow: 0 5px 3px 0 #aaa
+      color: #fff
+      margin: 0 auto
+      text-align: center
+      text-decoration: none
+      padding: 4px 0
+      font-size: 1.3rem
+      max-width: 640px
+    footer
+      background-color: #f9f9f9 !important
+      text-align: center
+    .footer-container
+      margin: 0 auto
+      max-width: 1000px
+      padding: 20px 0
+      width: 100%
+    .footer-item, .slash
+      color: #777
+      font-size: .8rem
+      text-decoration: none
+    .company-info
+      color: #777
+      font-size: .6rem
+      margin: 12px 0 0 0
+
+    @media screen and (max-width:767px)
+      .hero h2
+        font-family: Times
+        font-size: 3.0rem
+      .hero p
+        font-size: 1.0rem
+      .use-item
+        border: 1px solid #ccc
+        border-radius: 1.0rem
+      .block-title
+        font-size: 1.8rem
+        margin-bottom: 1.2rem
+      .service-desc
+        padding: 2.0rem .5rem 4.0rem
+      .service-desc p
+        font-size: 1.0rem
+        margin: .6rem 1.0rem
+      .service-use
+        padding-bottom: 2.0rem
+    @media screen and (min-width:768px)
+      .hero h2
+        font-family: Times
+        font-size: 6.0rem
+      .hero p
+        font-size: 2.0rem
+      .use-item-list
+        display: flex
+        justify-content: space-between
+        margin-top: -2.0rem
+      .block-title
+        font-size: 2.5rem
+        margin-bottom: 2.5rem
+      .service-desc
+        padding: 5.0rem .5rem 5.0rem
+        max-width: 1000px
+      .service-desc p
+        font-size: 1.48rem
+        margin: .6rem 4.0rem
+        text-align: left
+      .service-use
+        padding: 5.0rem .5rem 5.0rem
+        max-width: 1000px
+        margin: 0 auto
+
+body
+  .hero
+    .hero-content
+      h2 = "B-PALs"
+      p = "〜メンズのための美容メディア〜"
+  .service-desc
+    h3.block-title = "B-PALsが目指すもの"
+    p
+      |女性だけが美を追求する時代は終わった。
+      |男性も美を追求する時代だ。
+      |だけど男性はどうやって美しくなればいいのだろう？
+      br
+      |B-PALsは男性の美の悩みを解決することを目指します。
+  .service-use
+    h3.block-title = "B-PALsの使い方"
+    .use-item-list
+      .use-item
+        h4 = "投稿する"
+        = image_tag "/post.png"
+        p
+          |あなたのお気に入りの化粧品やメイク方法などを投稿できます。
+          |あなたの投稿がきっと誰かの役に立つはず。
+      .use-item
+        h4 = "探す"
+        = image_tag '/search.png'
+        p
+          |他の人の投稿や商品を探すことができます。
+          |あなたの年齢や肌質に近い人の情報を積極的に集めるのもおすすめです。
+      .use-item
+        h4 = "コメントする"
+        = image_tag '/comment.png'
+        p
+          |お気に入りの投稿や商品情報があれば、コメントしてみましょう。
+          |あなたからのコメントが誰かの励みになります。
+  .link-box
+    = link_to "登録する", new_user_registration_path, class:"btn btn-regist"
+  footer
+    .footer-container
+      .footer-list
+        = link_to t('view.terms_of_service'), pages_service_path, class:"footer-item"
+        span.slash = " / "
+        = link_to t('view.terms_of_privacy'), pages_privacy_path, class:"footer-item"
+      .company-info
+        |&copy; 2019 B-PALs
