@@ -492,6 +492,11 @@ footer{
   max-width: 720px;
   width: 100%;
 }
+
+.__ban{
+  background-color: #000 !important;
+  opacity: .4;
+}
 @media screen and (max-width:767px){
   .login-form{
     padding-bottom: 30px;
