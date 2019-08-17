@@ -57,6 +57,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
+    brakeman (4.6.1)
     builder (3.2.3)
     bullet (6.0.1)
       activesupport (>= 3.0.0)
@@ -378,6 +379,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)
+  brakeman
   bullet
   byebug
   capistrano (= 3.6.0)
