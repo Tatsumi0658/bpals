@@ -59,9 +59,9 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       #Database setup
-      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run: yarn
-      - run: bundle exec rake db:setup
+      # - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      # - run: yarn
+      # - run: bundle exec rake db:setup
 
       # run tests!
       #- run:
