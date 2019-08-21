@@ -81,4 +81,4 @@ jobs:
 
       - deploy:
           name: Capistranoデプロイ
-          command: bundle exec cap production deploy
+          command: ssh $SSH_USER@$SSH_HOST "bundle exec cap production deploy"
