@@ -58,32 +58,19 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-      #Database setup
-      # - run: dockerize -wait tcp://localhost:5432 -timeout 1m
-      # - run: yarn
-      # - run: bundle exec rake db:setup
+      # Database setup
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run: yarn
+      - run: bundle exec rake db:setup
 
       # run tests!
-      #- run:
-      #    name: Rspec
-      #    command: bundle exec rspec
+      - run:
+          name: Rspec
+          command: bundle exec rspec
 
       # collect reports
-      #- store_test_results:
-      #    path: /tmp/test-results
-      #- store_artifacts:
-      #    path: /tmp/test-results
-      #    destination: test-results
-
-      - add_ssh_keys:
-          fingerprints:
-            - "61:15:82:74:49:7f:72:da:ed:d4:b8:2b:d5:a6:41:77"
-
-      - run:
-          name: Start ssh-keyscan
-          command: |
-            ssh-keyscan ${HOST_NAME} >> ~/.ssh/known_hosts
-
-      - deploy:
-          name: Capistranoデプロイ
-          command: ssh ${HOST_USER}@${HOST_NAME} "bundle exec cap production deploy"
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
