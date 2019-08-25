@@ -5,9 +5,6 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
     @q = Profile.ransack(params[:q])
     @profiles = @q.result
-    @profiles.each do |pro|
-      @purposes = ProfilePurposeRelationship.where(profile_id: pro.id).all
-    end
   end
 
   def new

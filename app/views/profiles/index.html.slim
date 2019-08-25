@@ -13,7 +13,7 @@
         ul.tag-list
           li.tag-item = judge_age(profile.age)
           li.tag-item = judge_skintype(profile.skintype)
-          - @purposes.each do |pur|
+          - profile.profile_purpose_relationship.each do |pur|
             li.tag-item = pur.purpose.purpose
 
   == render partial: "layouts/link"
