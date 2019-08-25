@@ -21,7 +21,6 @@ CarrierWave.configure do |config|
       config.fog_directory = 'bpals-production'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/bpals-production'
     when 'development'
-      config.fog_directory = 'bpals-development'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/bpals-development'
+      config.storage :file
   end
 end
