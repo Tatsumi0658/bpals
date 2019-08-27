@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     if @profile.save
-      redirect_to posts_path
+      redirect_to posts_path, notice:"登録完了"
     else
       render :new
     end
@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to posts_path
+      redirect_to posts_path, notice:"更新完了"
     else
       render :edit
     end

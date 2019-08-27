@@ -243,7 +243,7 @@ ul{
 
 #nav-open {
   display: inline-block;
-  height: 22px;
+  height: 24px;
   vertical-align: middle;
   width: 30px;
 }
@@ -305,7 +305,7 @@ ul{
 }
 
 .header-inner{
-  padding: 25px 15px;
+  padding: 25px 15px 22px 15px;
 }
 .menu{
   padding: 50px 30px;
@@ -496,6 +496,11 @@ footer{
 .__ban{
   background-color: #000 !important;
   opacity: .4;
+}
+
+.alert{
+  padding-left: .5rem;
+  margin-bottom: .5rem;
 }
 @media screen and (max-width:767px){
   .login-form{

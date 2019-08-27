@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.profile_id = current_profile.id
     if @post.save
-      redirect_to posts_path
+      redirect_to posts_path, notice: "投稿完了"
     else
       render :new
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to posts_path
+      redirect_to posts_path, notice:"更新完了"
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, notice:"削除完了"
   end
 
   def hashtag

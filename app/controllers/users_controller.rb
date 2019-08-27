@@ -8,17 +8,17 @@ class UsersController < ApplicationController
     if @user.admin_flag == true
       @user.admin_flag = false
       @user.save
-      redirect_to users_path
+      redirect_to users_path, notice:"更新完了"
     else
       @user.admin_flag = true
       @user.save
-      redirect_to users_path
+      redirect_to users_path, notice:"更新完了"
     end
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+    redirect_to users_path, notice:"削除完了"
   end
 end
