@@ -9,6 +9,13 @@ body{
 ul{
   list-style:none;
 }
+.main{
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  min-height: 77vh;
+  padding: 5px;
+}
+/*post*/
 .post-list{
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,15 +43,23 @@ ul{
   max-height: 400px;
   object-fit: contain;
 }
-.profile-item, .product-item, .comment-item{
-  border-bottom: 1px solid #ddd;
+.post-icon{
+  border-radius: 25px;
+  height: 50px;
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+  width: 50px;
 }
-.profile-item{
-  padding: 14px 12px 40px;
+.post-profile{
+  margin: 0 0 2px 0;
 }
-.product-item{
-  padding: 14px 12px;
+#post-image__1, #post-image__2{
+  display: none;
 }
+/*ここまで*/
+
+
+/* product/index, profile/index */
 .list-icon__square{
   height: 80px;
   margin: 0 15px 0 0;
@@ -82,6 +97,9 @@ ul{
   margin: 0 3px;
   font-size: .9rem;
 }
+/*ここまで*/
+
+/*プラスボタン*/
 .btn-plus{
   position: fixed;
   bottom: 30px;
@@ -93,24 +111,44 @@ ul{
   color: #fff;
   font-size: 16px;
 }
+/*ここまで*/
 
+/*profile*/
 .profile{
   max-width: 500px;
   margin: 0 auto;
   width: 100%;
 }
-.product-thum{
-  /*ここは幅を考えなきゃ*/
-}
-.product-image{
-  max-width: 400px;
-}
-
 .profile-image{
   border-radius: 125px;
   height: 250px;
   object-fit: cover;
   width: 250px;
+}
+.profile-name{
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 12px 0 12px;
+}
+.profile-item{
+  padding: 14px 12px 40px;
+}
+.pro_title{
+  font-size: 1.4rem;
+}
+.pro_desc{
+  margin: .5rem 0 1.0rem;
+}
+/*ここまで*/
+
+/*product*/
+.product_thum{
+  max-width: 400px;
+  width: 100%;
+}
+.product-image{
+  position: relative;
+  width: 100%;
 }
 
 .product-name{
@@ -118,14 +156,22 @@ ul{
   font-weight: bold;
   margin: 6px 0 12px;
 }
-.profile-name{
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 12px 0 12px;
+.product-item{
+  padding: 14px 12px;
 }
+/*ここまで*/
+
+/*共通部分*/
+.profile-item, .product-item, .comment-item{
+  border-bottom: 1px solid #ddd;
+}
+
 .product-label, .comment-label{
   margin: 0 0 6px;
 }
+/*ここまで*/
+
+/*comment*/
 .comment-label{
   margin: 48px 0 12px;;
 }
@@ -142,6 +188,9 @@ ul{
 .comment-item{
   padding: 6px 0;
 }
+.comment-list{
+  margin-bottom: 20px;
+}
 .btn-delete{
   color: #aaa;
   display: block;
@@ -150,16 +199,12 @@ ul{
   padding: 1px 5px;
   text-decoration: none;
 }
-.post-icon{
-  border-radius: 25px;
-  height: 50px;
-  margin: 0 8px 0 0;
-  vertical-align: middle;
-  width: 50px;
+.error_msg{
+  color: red;
 }
-.post-profile{
-  margin: 0 0 2px 0;
-}
+/*ここまで*/
+
+/*form*/
 .form-label{
   display: block;
   font-size: 1.2rem;
@@ -180,9 +225,23 @@ ul{
   padding: 5px 3px;
   width: 98%;
 }
-.error_msg{
-  color: red;
+.form-control__search{
+  border: .5px solid #eee;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  padding: 6px 10px;
+  width: 50%;
 }
+form.new_user{
+  margin-bottom: 20px;
+}
+.search-container{
+  margin-bottom: 20px;
+  text-align: center;
+}
+/*ここまで*/
+
+/*SNSログインボタン*/
 .btn-google{
   background-color: red;
   border-radius: 15px;
@@ -209,7 +268,13 @@ ul{
   text-decoration: none;
   width: 80%;
 }
+.__ban{
+  background-color: #000 !important;
+  opacity: .4;
+}
+/*ここまで*/
 
+/*静的ページ*/
 .service-container h2, .privacy-container h2{
   font-size: 1.3rem;
   margin-bottom: 25px;
@@ -229,7 +294,9 @@ ul{
   margin: 1rem 0 1rem 2rem;
   font-size: .9rem;
 }
+/*ここまで*/
 
+/*ハンバーガーメニュー*/
 #drawer{
   position: relative;
 }
@@ -303,10 +370,23 @@ ul{
     transform: translateX(0%);
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
+/*ここまで*/
 
+/*header*/
 .header-inner{
   padding: 25px 15px 22px 15px;
 }
+.header-wrap{
+  text-align: center;
+}
+.title-link{
+  color: #222;
+  font-size: 1.6rem;
+  font-family: Times;
+  letter-spacing: .2em;
+  text-decoration: none;
+}
+/*メニュー内*/
 .menu{
   padding: 50px 30px;
 }
@@ -321,12 +401,9 @@ ul{
   text-decoration: none;
   width: 100%;
 }
-.main{
-  max-width: 1000px;
-  margin: 0 auto 30px;
-  min-height: 77vh;
-  padding: 5px;
-}
+/*ここまで*/
+
+/*mypage*/
 .tag-list__show{
   margin: 0 0 8px 0;
 }
@@ -348,8 +425,69 @@ ul{
   margin:0 5px 0 0;
   text-decoration: none;
 }
-#post-image__1, #post-image__2{
-  display: none;
+.profile-postlist{
+  margin-top: 50px;
+}
+/*ここまで*/
+
+/*footer*/
+footer{
+  background-color: #f9f9f9 !important;
+  text-align: center;
+}
+.footer-container{
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px 0;
+  width: 100%;
+}
+.footer-item, .slash{
+  color: #777;
+  font-size: .8rem;
+  text-decoration: none;
+}
+.company-info{
+  color: #777;
+  font-size: .6rem;
+  margin: 12px 0 0 0;
+}
+/*ここまで*/
+
+/*user一覧*/
+.user-list{
+  width: 100%;
+  text-align: center;
+}
+.user-list th, .user-list td{
+  vertical-align: middle;
+}
+.user-list th:nth-child(1), .user-list td:nth-child(1){
+  width: 40%;
+}
+.user-list td:nth-child(1){
+  text-align: left;
+}
+.user-head, .user-item{
+  border-bottom: .5px solid #ccc;
+  padding: 10px 0;
+}
+.user-item__link{
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  color: #444;
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+/*ここまで*/
+
+/*お気に入り、編集、削除アイコン*/
+.far.fa-heart, .fas.fa-edit.fa-lg, .fas.fa-trash-alt.fa-lg{
+  color: #aaa;
+  margin: 4px 4px 4px 0;
+}
+.fas.fa-heart{
+  color: red;
 }
 #button-container{
   margin: -30px 0 auto;
@@ -376,88 +514,9 @@ ul{
 .radio-images{
   display:none;
 }
-.profile-postlist{
-  margin-top: 50px;
-}
-.search-container{
-  margin-bottom: 20px;
-  text-align: center;
-}
-.form-control__search{
-  border: .5px solid #eee;
-  border-right: none;
-  border-radius: 10px 0 0 10px;
-  padding: 6px 10px;
-  width: 50%;
-}
-form.new_user{
-  margin-bottom: 20px;
-}
-.comment-list{
-  margin-bottom: 20px;
-}
-.header-wrap{
-  text-align: center;
-}
-.title-link{
-  color: #222;
-  font-size: 1.6rem;
-  font-family: Times;
-  letter-spacing: .2em;
-  text-decoration: none;
-}
-footer{
-  background-color: #f9f9f9 !important;
-  text-align: center;
-}
-.footer-container{
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: 20px 0;
-  width: 100%;
-}
-.footer-item, .slash{
-  color: #777;
-  font-size: .8rem;
-  text-decoration: none;
-}
-.company-info{
-  color: #777;
-  font-size: .6rem;
-  margin: 12px 0 0 0;
-}
-.user-list{
-  width: 100%;
-  text-align: center;
-}
-.user-list th, .user-list td{
-  vertical-align: middle;
-}
-.user-list th:nth-child(1), .user-list td:nth-child(1){
-  width: 40%;
-}
-.user-list td:nth-child(1){
-  text-align: left;
-}
-.user-head, .user-item{
-  border-bottom: .5px solid #ccc;
-  padding: 10px 0;
-}
-.user-item__link{
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  color: #444;
-  font-size: 0.7rem;
-  padding: 5px 10px;
-  text-decoration: none;
-}
-.far.fa-heart, .fas.fa-edit.fa-lg, .fas.fa-trash-alt.fa-lg{
-  color: #aaa;
-  margin: 4px 4px 4px 0;
-}
-.fas.fa-heart{
-  color: red;
-}
+/*ここまで*/
+
+/*ページネーション*/
 .paginater{
   margin-top: 10px;
   text-align: center;
@@ -467,6 +526,9 @@ footer{
   font-size: .92rem;
   text-decoration: none;
 }
+/*ここまで*/
+
+/*共通部分*/
 .btn-search{
   border: .5px solid #eee;
   border-left: none;
@@ -492,16 +554,13 @@ footer{
   max-width: 720px;
   width: 100%;
 }
-
-.__ban{
-  background-color: #000 !important;
-  opacity: .4;
-}
-
 .alert{
-  padding-left: .5rem;
   margin-bottom: .5rem;
 }
+/*ここまで*/
+
+
+
 @media screen and (max-width:767px){
   .login-form{
     padding-bottom: 30px;

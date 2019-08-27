@@ -229,6 +229,13 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   view:
+    alert:
+      post: 投稿完了
+      update: 更新完了
+      delete: 削除完了
+      account: 登録完了
+      disabled: 権限がありません
+      make_profile: プロフィールを作成してください
     comments: コメント
     post comments: コメントを入力
     submit: 送信

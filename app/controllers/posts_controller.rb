@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.profile_id = current_profile.id
     if @post.save
-      redirect_to posts_path, notice: "投稿完了"
+      redirect_to posts_path, notice: t('view.alert.post')
     else
       render :new
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to posts_path, notice:"更新完了"
+      redirect_to posts_path, notice: t('view.alert.update')
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path, notice:"削除完了"
+    redirect_to posts_path, notice: t('view.alert.delete')
   end
 
   def hashtag
@@ -69,7 +69,7 @@ class PostsController < ApplicationController
 
   def current_profile!
     unless current_profile.present?
-      redirect_to new_profile_path
+      redirect_to new_profile_path, notice: t('view.alert.make_profile')
     end
   end
 end

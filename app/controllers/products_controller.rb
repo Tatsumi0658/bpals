@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path, notice:"投稿完了"
+      redirect_to products_path, notice: t('view.alert.post')
     else
       render :new
     end
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to products_path, notice:"更新完了"
+      redirect_to products_path, notice: t('view.alert.update')
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to products_path, notice:"削除完了"
+    redirect_to products_path, notice: t('view.alert.delete')
   end
 
   def search
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
 
   def judge_admin
     unless current_user.admin_flag == true
-      redirect_to posts_path
+      redirect_to posts_path, notice: t('view.alert.disabled')
     end
   end
 
