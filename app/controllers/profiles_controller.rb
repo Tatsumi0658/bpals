@@ -27,6 +27,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @purposes = ProfilePurposeRelationship.where(profile_id: @profile).pluck(:purpose_id)
   end
 
   def update

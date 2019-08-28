@@ -39,7 +39,7 @@
     .form-label = t('view.profile.purpose')
     = f.label :purpose_ids
       - Purpose.all.each do |purpose|
-        = f.check_box :purpose_ids,{ multiple: true, checked: purpose[:id], include_hidden: false}, purpose[:id]
+        = f.check_box :purpose_ids,{ multiple: true, checked: @purposes.present? ? @purposes.include?(purpose[:id]) : false, include_hidden: false}, purpose[:id]
         = purpose.purpose
   br
   .actions
