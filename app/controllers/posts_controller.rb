@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
   before_action :current_profile!, only:[:new, :create, :edit, :update, :destroy]
   def index
-    @posts = Post.page(params[:page]).per(12).includes(:profile)
+    @posts = Post.page(params[:page]).per(12).includes(:profile).order('updated_at DESC')
   end
 
   def new
