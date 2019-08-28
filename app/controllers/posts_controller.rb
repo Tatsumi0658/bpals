@@ -46,12 +46,12 @@ class PostsController < ApplicationController
 
   def hashtag
     tag = Hashtag.find_by(hashtag: params[:name])
-    @hashs = PostHashtagRelationship.where(hashtag_id: tag.id)
+    @hashs = PostHashtagRelationship.where(hashtag_id: tag.id).order('updated_at DESC')
   end
 
   def search
     if tag = Hashtag.find_by(hashtag: params[:search])
-      @hashs = PostHashtagRelationship.where(hashtag_id: tag.id)
+      @hashs = PostHashtagRelationship.where(hashtag_id: tag.id).order('updated_at DESC')
     else
       @hashs = nil
     end
