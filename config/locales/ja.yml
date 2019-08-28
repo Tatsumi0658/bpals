@@ -258,7 +258,7 @@ ja:
       dry: 乾燥肌
       oily: 脂性肌
       mixed: 混合肌
-      unknown: わからない
+      unknown: 肌質不明
       business: ビジネス
       fashion: ファッション
       cosplay: コスプレ
@@ -266,17 +266,20 @@ ja:
       parsonal info: 個人情報
       edit profile: プロフィール編集
       set profile: プロフィール設定
+      search: 気になる人を探す
     product:
       new: 商品登録
       edit: 登録情報編集
       name: 商品名
       images: 商品画像
       description: 商品説明
+      search: 気になる商品を探す
     post:
       images: 画像
       content: 投稿内容
       new: 新規投稿
       edit: 編集
+      search: 気になる投稿を探す
     favorite:
       favorite: お気に入り登録
       non favorite: お気に入り解除

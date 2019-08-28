@@ -1,7 +1,7 @@
 .container
   .search-container
     = form_tag search_posts_path, method: :get do
-      = text_field_tag :search, "", placeholder:t('view.search'),class:"form-control__search"
+      = text_field_tag :search, "", placeholder:t('view.post.search'),class:"form-control__search"
       = button_tag type: "submit", class:"btn btn-search" do
         i.fas.fa-search
 
