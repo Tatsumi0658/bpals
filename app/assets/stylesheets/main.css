@@ -557,6 +557,28 @@ footer{
 .alert{
   margin-bottom: .5rem;
 }
+.shortcut-box{
+  margin-top: 80px;  
+}
+.shortcut-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.shortcut-item{
+  width: 23%;
+}
+.shortcut-link{
+  display: block;
+  text-align: center;
+  font-size: .8rem;
+}
+.shortcut-link img{
+  max-width: 100px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+}
 /*ここまで*/
 
 
