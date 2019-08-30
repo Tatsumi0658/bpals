@@ -432,7 +432,7 @@ form.new_user{
 
 /*footer*/
 footer{
-  background-color: #f9f9f9 !important;
+  background-color: #777 !important;
   text-align: center;
 }
 .footer-container{
@@ -442,12 +442,12 @@ footer{
   width: 100%;
 }
 .footer-item, .slash{
-  color: #777;
+  color: #fff;
   font-size: .8rem;
   text-decoration: none;
 }
 .company-info{
-  color: #777;
+  color: #fff;
   font-size: .6rem;
   margin: 12px 0 0 0;
 }
@@ -558,26 +558,44 @@ footer{
   margin-bottom: .5rem;
 }
 .shortcut-box{
-  margin-top: 80px;  
+  background: #f9f9f9;
+  padding: 30px 0;
 }
 .shortcut-list{
   display: flex;
   flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
   justify-content: space-between;
+  width: 92%;
 }
 .shortcut-item{
-  width: 23%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+  width: 25%;
+}
+.shortcut-item:last-child{
+  border: none;
+}
+.__banned{
+  background: rgba(0,0,0,0.3);
 }
 .shortcut-link{
+  color: #444;
   display: block;
+  font-size: .7rem;
+  padding: 20px 0;
   text-align: center;
-  font-size: .8rem;
+  text-decoration: none;
 }
 .shortcut-link img{
   max-width: 100px;
   position: relative;
-  vertical-align: middle;
-  width: 100%;
+  width: 70%;
+}
+.shortcut-item p{
+  margin-top: .5rem;
 }
 /*ここまで*/
 
@@ -606,6 +624,10 @@ footer{
   }
   .user-list{
     font-size: .7rem;
+  }
+  .shortcut-box{
+    margin-top: 40px;
+    padding: 20px 0;
   }
 }
 @media screen and (min-width: 768px){
@@ -646,5 +668,9 @@ footer{
     position: absolute;
     right: 50px;
     top: 35px;
+  }
+  .shortcut-box{
+    margin-top: 100px;
+    padding: 30px 0;
   }
 }

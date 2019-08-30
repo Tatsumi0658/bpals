@@ -1,22 +1,27 @@
+- if current_user.present?
 .shortcut-box
   ul.shortcut-list
     li.shortcut-item
       = link_to new_post_path, class:"shortcut-link"
         = image_tag "/post.png"
-        | 投稿
+        br
+        p = 投稿
     li.shortcut-item
       = link_to profiles_path, class:"shortcut-link"
         = image_tag "/icon.png"
-        | プロフィール
+        br
+        p = プロフィール
     li.shortcut-item
       = link_to products_path, class:"shortcut-link"
         =image_tag "/icon.png"
-        | 商品
+        br
+        p = 商品
     li.shortcut-item
-      - if current_user.present? && current_profile.present?
+      - if current_profile.present?
         = link_to profiles_path(current_profile.id), class:"shortcut-link"
           = image_tag "/icon.png"
-          | my page
+          br
+          p = my page
       - else
         = link_to "#", class:"shortcut-link"
           = image_tag "/icon.png"
