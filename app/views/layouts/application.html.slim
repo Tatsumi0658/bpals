@@ -49,15 +49,15 @@ html
           li.shortcut-item
             = link_to new_post_path, class:"shortcut-link"
               = image_tag "/post.png"
-              p = "投稿"
+              p = t('view.post.new')
           li.shortcut-item
             = link_to profiles_path, class:"shortcut-link"
               = image_tag "/profile.png"
-              p = "プロフィール"
+              p = t('view.profile.list')
           li.shortcut-item
             = link_to products_path, class:"shortcut-link"
               = image_tag "/product.png"
-              p = "商品"
+              p = t('view.product.list')
           - if current_profile.present?
             li.shortcut-item
               = link_to profile_path(current_profile.id), class:"shortcut-link"

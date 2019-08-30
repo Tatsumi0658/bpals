@@ -267,6 +267,7 @@ ja:
       edit profile: プロフィール編集
       set profile: プロフィール設定
       search: 気になる人を探す
+      list: 登録者一覧
     product:
       new: 商品登録
       edit: 登録情報編集
@@ -274,6 +275,7 @@ ja:
       images: 商品画像
       description: 商品説明
       search: 気になる商品を探す
+      list: 商品一覧
     post:
       images: 画像
       content: 投稿内容
