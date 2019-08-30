@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_134859) do
+ActiveRecord::Schema.define(version: 2019_08_30_151023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_134859) do
     t.json "images"
     t.bigint "profile_id"
     t.index ["profile_id"], name: "index_posts_on_profile_id"
+    t.index ["updated_at"], name: "index_posts_on_updated_at", order: :desc
   end
 
   create_table "product_comments", force: :cascade do |t|
