@@ -425,8 +425,34 @@ form.new_user{
   margin:0 5px 0 0;
   text-decoration: none;
 }
-.profile-postlist{
+.tab-list{
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 50px;
+  justify-content: center;
+}
+#profile-postlist{
+  margin-top: 20px;
+}
+#favorite-list{
+  display: none;
+  margin-top: 20px;
+}
+.post-label{
+  display: none;
+}
+.label.button{
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #777;
+  padding: 10px 0;
+  text-align: center;
+  width: 49%;
+}
+.post-label:checked + .label.button{
+  background-color: #444;
+  border: 1px solid #444;
+  color: #fff;
 }
 /*ここまで*/
 

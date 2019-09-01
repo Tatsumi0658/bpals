@@ -5,10 +5,12 @@
     .profile-desc
       h2.profile-name = @profile.nickname
       ul.tag-list__show
-        li.tag-item__show = judge_age(@profile.age)
-        br
-        li.tag-item__show = judge_skintype(@profile.skintype)
-        br
+        - if @profile.age.present?
+          li.tag-item__show = judge_age(@profile.age)
+          br
+        - if @profile.skintype.present?
+          li.tag-item__show = judge_skintype(@profile.skintype)
+          br
         - @purposes.each do |pur|
           li.tag-item__show = pur.purpose.purpose
           br
@@ -17,8 +19,14 @@
             = link_to t('view.profile.edit profile'), edit_profile_path(current_profile.id), class:"mypage-link"
             nsbp
             = link_to t('view.profile.parsonal info'), edit_user_registration_path, class:"mypage-link"
-
-  .profile-postlist
+  .tab-list
+    input class="post-label" type="radio" checked=true name="lists" value=1 id="post"
+    label for = "post" class = "label button first"
+      | 投稿一覧
+    input class="post-label" type="radio" name="lists" value=2 id= "fav"
+    label for = "fav" class = "label button second"
+      | お気に入り
+  #profile-postlist
     ul.post-list
       - @posts.each do |post|
         li.post-item
@@ -28,3 +36,29 @@
           - else
             = link_to post_path(post.id) do
               img.post-wrap src = post.images[0]
+
+  #favorite-list
+    ul.post-list
+      - @favorites.each do |fav|
+        li.post-item
+          - if video_check(fav.post.images[0]) == true
+            = link_to post_path(fav.post.id) do
+              video.post-wrap src = fav.post.images[0] controls = true
+          - else
+            = link_to post_path(fav.post.id) do
+              img.post-wrap src = fav.post.images[0]
+
+javascript:
+  $(function(){
+    $('input[name="lists"]').change(function(){
+      var result = $(this).val();
+      console.log(result);
+      if(result == "2"){
+        document.getElementById("profile-postlist").style.display="none";
+        document.getElementById("favorite-list").style.display="block";
+      }else{
+        document.getElementById("favorite-list").style.display="none";
+        document.getElementById("profile-postlist").style.display="block";
+      };
+    });
+  });

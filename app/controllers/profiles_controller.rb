@@ -23,7 +23,8 @@ class ProfilesController < ApplicationController
 
   def show
     @purposes = ProfilePurposeRelationship.where(profile_id: @profile.id).all
-    @posts = Post.where(profile_id: @profile.id).all
+    @posts = Post.where(profile_id: @profile.id).order("updated_at DESC")
+    @favorites = Favorite.where(profile_id: @profile.id).order("updated_at DESC")
   end
 
   def edit

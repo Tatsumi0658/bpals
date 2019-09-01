@@ -11,8 +11,10 @@
           = image_check(profile.image, "list-icon")
           = profile.nickname
         ul.tag-list
-          li.tag-item = judge_age(profile.age)
-          li.tag-item = judge_skintype(profile.skintype)
+          - if profile.age.present?
+            li.tag-item = judge_age(profile.age)
+          - if profile.skintype.present?
+            li.tag-item = judge_skintype(profile.skintype)
           - profile.profile_purpose_relationship.each do |pur|
             li.tag-item = pur.purpose.purpose
 

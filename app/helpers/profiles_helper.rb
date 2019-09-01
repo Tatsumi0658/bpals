@@ -6,7 +6,7 @@ module ProfilesHelper
       t("view.profile.late 20's")
     elsif age_value == 3
       t("view.profile.early 30's")
-    else
+    elsif age_value == 4
       t("view.profile.late 30's~")
     end
   end
