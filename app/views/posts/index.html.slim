@@ -15,6 +15,5 @@
           = link_to post_path(post.id) do
             img.post-wrap src = post.images[0]
 
-  == render partial: "layouts/link"
   .paginater
     = paginate @posts

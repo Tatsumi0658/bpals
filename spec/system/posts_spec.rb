@@ -20,7 +20,7 @@ RSpec.describe "Posts", type: :system do
     fill_in "user_password", with: "123456"
     click_on "Log in"
 
-    click_on(class: "btn btn-plus")
+    first(".shortcut-link").click
 
     attach_file "post[images][]", "#{Rails.root}/spec/system/file/kkk.jpg", match: :first
     click_on "送信"
@@ -33,7 +33,7 @@ RSpec.describe "Posts", type: :system do
     fill_in "user_password", with: "123456"
     click_on "Log in"
 
-    click_on(class: "btn btn-plus")
+    first(".shortcut-link").click
 
     click_on "送信"
     expect(page).to have_content "画像を入力してください"
