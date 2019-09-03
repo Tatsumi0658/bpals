@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_151023) do
+ActiveRecord::Schema.define(version: 2019_09_03_123536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_151023) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hashtag_id"], name: "index_post_hashtag_relationships_on_hashtag_id"
+    t.index ["post_id", "hashtag_id"], name: "index_post_hashtag_relationships_on_post_id_and_hashtag_id", unique: true
     t.index ["post_id"], name: "index_post_hashtag_relationships_on_post_id"
   end
 

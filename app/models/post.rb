@@ -21,6 +21,21 @@ class Post < ApplicationRecord
     end
   end
 
+  after_update do
+    post = Post.find_by(id: self.id)
+    PostHashtagRelationship.where(post_id: post.id).delete_all
+    unless self.content.nil?
+      hashtags = self.content.scan(/#[\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+      hashtags.each do |hash|
+        hash = hash.delete('#')
+        hash_log = Hashtag.find_or_create_by(hashtag: hash)
+        unless PostHashtagRelationship.find_by(post_id: post.id, hashtag_id: hash_log.id)
+          PostHashtagRelationship.create!(post_id: post.id, hashtag_id: hash_log.id)
+        end
+      end
+    end
+  end
+
   scope :search_content, ->(word){ where('content LIKE ?', "#{word}")}
 
 
