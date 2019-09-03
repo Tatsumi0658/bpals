@@ -8,6 +8,8 @@ module ProfilesHelper
       t("view.profile.early 30's")
     elsif age_value == 4
       t("view.profile.late 30's~")
+    elsif age_value == 5
+      t("view.profile.age_unknown")
     end
   end
 
@@ -20,6 +22,8 @@ module ProfilesHelper
       t('view.profile.oily')
     elsif skintype_value == 4
       t('view.profile.mixed')
+    elsif skintype_value == 5
+      t('view.profile.skin_unknown')
     end
   end
 end

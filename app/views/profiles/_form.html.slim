@@ -21,6 +21,8 @@
     = f.label :age, t("view.profile.early 30's"), class:"form-label__radio"
     = f.radio_button :age, 4
     = f.label :age, t("view.profile.late 30's~"), class:"form-label__radio"
+    = f.radio_button :age, 5
+    = f.label :age, t("view.profile.age_unknown"), class:"form-label__radio"
   br
   .field
     .form-label = t('view.profile.skintype')
@@ -33,7 +35,7 @@
     = f.radio_button :skintype, 4
     = f.label :skintype, t('view.profile.mixed'), class:"form-label__radio"
     = f.radio_button :skintype, 5
-    = f.label :skintype, t('view.profile.unknown'), class:"form-label__radio"
+    = f.label :skintype, t('view.profile.skin_unknown'), class:"form-label__radio"
   br
   .field
     .form-label = t('view.profile.purpose')

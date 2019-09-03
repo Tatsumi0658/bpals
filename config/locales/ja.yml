@@ -258,7 +258,8 @@ ja:
       dry: 乾燥肌
       oily: 脂性肌
       mixed: 混合肌
-      unknown: 肌質不明
+      skin_unknown: 肌質不明
+      age_unknown: 年齢不詳
       business: ビジネス
       fashion: ファッション
       cosplay: コスプレ
