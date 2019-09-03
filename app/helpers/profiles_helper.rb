@@ -20,8 +20,6 @@ module ProfilesHelper
       t('view.profile.oily')
     elsif skintype_value == 4
       t('view.profile.mixed')
-    else
-      t('view.profile.unknown')
     end
   end
 end
