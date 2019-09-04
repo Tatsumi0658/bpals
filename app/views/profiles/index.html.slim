@@ -4,16 +4,19 @@
       = f.search_field :nickname_cont, class:"form-control__search", placeholder:t('view.profile.search')
       = button_tag type:"submit", class:"btn btn-search" do
         i.fas.fa-search
-  ul.profile-list
-    - @profiles.each do |profile|
-      li.profile-item
-        a.list-link href = profile_path(profile.id)
-          = image_check(profile.image, "list-icon")
-          = profile.nickname
-        ul.tag-list
-          - if profile.age.present?
-            li.tag-item = judge_age(profile.age)
-          - if profile.skintype.present?
-            li.tag-item = judge_skintype(profile.skintype)
-          - profile.profile_purpose_relationship.each do |pur|
-            li.tag-item = pur.purpose.purpose
+  - if @profiles.present?
+    ul.profile-list
+      - @profiles.each do |profile|
+        li.profile-item
+          a.list-link href = profile_path(profile.id)
+            = image_check(profile.image, "list-icon")
+            = profile.nickname
+          ul.tag-list
+            - if profile.age.present?
+              li.tag-item = judge_age(profile.age)
+            - if profile.skintype.present?
+              li.tag-item = judge_skintype(profile.skintype)
+            - profile.profile_purpose_relationship.each do |pur|
+              li.tag-item = pur.purpose.purpose
+  - else
+    p = "該当のユーザーはいません"

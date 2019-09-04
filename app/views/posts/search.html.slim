@@ -1,11 +1,13 @@
 .container
-  - unless @hashs.nil?
+  - if @posts.present?
     ul.post-list
-      - @hashs.each do |hash|
+      - @posts.each do |post|
         li.post-item
-          - if video_check(hash.post.images[0]) == true
-            = link_to post_path(hash.post.id) do
-              video.post-wrap src = hash.post.images[0] controls = true
+          - if video_check(post.images[0]) == true
+            = link_to post_path(post.id) do
+              video.post-wrap src = post.images[0] controls = true
           - else
-            = link_to post_path(hash.post.id)
-              img.post-wrap src = hash.post.images[0]
+            = link_to post_path(post.id)
+              img.post-wrap src = post.images[0]
+  - else
+    p = "該当の商品はありません"

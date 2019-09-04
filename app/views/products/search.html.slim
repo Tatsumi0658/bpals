@@ -1,7 +1,10 @@
 .container
-  ul.product-list
-    - @products.each do |product|
-      li.product-item
-        a.list-link href = product_path(product.id)
-          img.list-icon__square src = product.product_images[0]
-          = product.name
+  - if @products.present?
+    ul.product-list
+      - @products.each do |product|
+        li.product-item
+          a.list-link href = product_path(product.id)
+            img.list-icon__square src = product.product_images[0]
+            = product.name
+  - else
+    p = "該当の商品はありません"
