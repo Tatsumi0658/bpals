@@ -26,19 +26,19 @@ html
                 h2.menu-title Menu
                 ul.menu-list
                   li.menu-item
-                    = link_to "posts", posts_path ,class: "menu-link"
+                    = link_to t('view.post.new'), posts_path ,class: "menu-link"
                   li.menu-item
-                    = link_to "profiles", profiles_path, class: "menu-link"
+                    = link_to t('view.profile.list'), profiles_path, class: "menu-link"
                   li.menu-item
-                    = link_to "products", products_path, class: "menu-link"
+                    = link_to t('view.product.list'), products_path, class: "menu-link"
                   - if current_user.present? && current_profile.present?
                     li.menu-item
                       = link_to "my page", profile_path(current_profile.id), class:"menu-link"
                   - if current_user.present? && current_profile.present? && current_user.admin_flag == true
                     li.menu-item
-                      = link_to "users", users_path, class:"menu-link"
+                      = link_to t('view.user.list'), users_path, class:"menu-link"
                     li.menu-item
-                      = link_to "add product", new_product_path, class:"menu-link"
+                      = link_to t('view.product.new'), new_product_path, class:"menu-link"
                   - if current_user.present?
                     li.menu-item
                       = link_to "Logout", destroy_user_session_path, method: :delete, class: "menu-link"
