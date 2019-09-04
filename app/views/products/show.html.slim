@@ -10,6 +10,11 @@
               label
                 input class="radio-images" type="radio" name="images" value=i
                 span.images-label
+        - if current_user.present? && current_profile.present? && current_user.admin_flag == true
+          = link_to edit_product_path(@product.id)
+            i.fas.fa-edit.fa-lg
+          = link_to product_path(@product.id), method: :delete, data:{ confirm: "OK?" }
+            i.fas.fa-trash-alt.fa-lg
       .product-desc
         h2.product-name = @product.name
         h3.product-label = t('view.product.description')

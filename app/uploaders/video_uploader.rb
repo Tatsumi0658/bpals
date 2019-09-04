@@ -16,7 +16,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   end
 
   def extension_whitelist
-    %w(jpg jpeg gif png mp4)
+    %w(jpg jpeg gif png mp4 mov)
   end
 
 end
