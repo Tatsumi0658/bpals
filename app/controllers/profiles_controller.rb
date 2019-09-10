@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to posts_path, notice: t('view.alert.update')
+      redirect_to profile_path(@profile.id), notice: t('view.alert.update')
     else
       render :edit
     end
