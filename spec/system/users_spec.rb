@@ -83,7 +83,7 @@ RSpec.describe "Users", type: :system do
     fill_in "user_password", with: "123456"
     click_on "Log in"
 
-    click_on "Logout"
+    click_on "ログアウト"
 
     expect(page).to have_current_path(root_path)
   end
