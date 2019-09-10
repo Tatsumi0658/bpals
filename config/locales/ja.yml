@@ -244,6 +244,8 @@ ja:
     terms_of_service: 利用規約
     terms_of_privacy: プライバシーポリシー
     get: 検索
+    logout: ログアウト
+    mypage: マイページ
     profile:
       nickname: ニックネーム
       icon: アイコン

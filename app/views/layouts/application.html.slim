@@ -33,7 +33,7 @@ html
                     = link_to t('view.product.list'), products_path, class: "menu-link"
                   - if current_user.present? && current_profile.present?
                     li.menu-item
-                      = link_to "my page", profile_path(current_profile.id), class:"menu-link"
+                      = link_to t('view.mypage'), profile_path(current_profile.id), class:"menu-link"
                   - if current_user.present? && current_profile.present? && current_user.admin_flag == true
                     li.menu-item
                       = link_to t('view.user.list'), users_path, class:"menu-link"
@@ -41,12 +41,12 @@ html
                       = link_to t('view.product.new'), new_product_path, class:"menu-link"
                   - if current_user.present?
                     li.menu-item
-                      = link_to "Logout", destroy_user_session_path, method: :delete, class: "menu-link"
+                      = link_to t('view.logout'), destroy_user_session_path, method: :delete, class: "menu-link"
                   - else
                     li.menu-item
-                      = link_to "Sign Up", new_user_registration_path, class: "menu-link"
+                      = link_to t('devise.shared.links.sign_up'), new_user_registration_path, class: "menu-link"
                     li.menu-item
-                      = link_to "Sign In", new_user_session_path, class: "menu-link"
+                      = link_to t('devise.shared.links.sign_in'), new_user_session_path, class: "menu-link"
 
     main.main
       .alert = notice
@@ -70,7 +70,7 @@ html
             li.shortcut-item
               = link_to profile_path(current_profile.id), class:"shortcut-link"
                 = image_tag "/icon.png"
-                p = "my page"
+                p = t('view.mypage')
           - else
             li.shortcut-item.__banned
               = link_to "javascriot:void(0)", class:"shortcut-link"
@@ -82,11 +82,11 @@ html
       .footer-container
         .footer-list
           - if user_signed_in?
-            = link_to "Logout", destroy_user_session_path, method: :delete, class: "footer-item"
+            = link_to t('view.logout'), destroy_user_session_path, method: :delete, class: "footer-item"
           - else
-            = link_to "Sign Up", new_user_registration_path, class: "footer-item"
+            = link_to t('devise.shared.links.sign_up'), new_user_registration_path, class: "footer-item"
             span.slash = " / "
-            = link_to "Sign In", new_user_session_path, class: "footer-item"
+            = link_to t('devise.shared.links.sign_in'), new_user_session_path, class: "footer-item"
           span.slash = " / "
           = link_to t('view.terms_of_service'), pages_service_path, class:"footer-item"
           span.slash = " / "
