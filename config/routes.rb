@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     get "login", to: "users/sessions#new"
     get "logout", to: "users/sessions#destroy"
   end
-  resources :users, only:[:index, :edit, :destroy]
+  resources :users do
+    collection do
+      get 'search', to: 'users#search'
+    end
+  end
   resources :profiles
   resources :posts do
     resources :post_comments, only:[:create, :destroy]

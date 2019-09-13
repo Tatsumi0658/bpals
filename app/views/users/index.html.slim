@@ -1,4 +1,9 @@
 .container
+  .search-container
+    = form_tag search_users_path, method: :get do
+      = text_field_tag :search, "", placeholder:t('view.user.search'),class:"form-control__search"
+      = button_tag type: "submit", class:"btn btn-search" do
+        i.fas.fa-search
   table.user-list
     tr
       th.user-head = "Email"
@@ -17,3 +22,5 @@
         - else
           td.user-item = link_to t('view.user.to general'), edit_user_path(user.id), class:"user-item__link"
         td.user-item = button_to "delete", user_path(user.id), method: :delete, data: {confirm: "OK?"}
+  .paginater
+    = paginate @users

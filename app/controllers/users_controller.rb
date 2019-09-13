@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.where.not(id:current_user.id).order("id")
+    @users = User.where.not(id:current_user.id).order("id").page(params[:page]).per(10)
   end
 
   def edit
@@ -20,5 +20,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path, notice: t('view.alert.delete')
+  end
+
+  def search
+    @users = User.where("email LIKE ?","%#{params[:search]}%").page(params[:page]).per(10)
   end
 end

@@ -1,0 +1,30 @@
+.container
+  .search-container
+    = form_tag search_users_path, method: :get do
+      = text_field_tag :search, "", placeholder:t('view.user.search'),class:"form-control__search"
+      = button_tag type: "submit", class:"btn btn-search" do
+        i.fas.fa-search
+  - if @users.present?
+    table.user-list
+      tr
+        th.user-head = "Email"
+        th.user-head = "権限"
+        th.user-head = "変更"
+        th.user-head = "削除"
+      - @users.each do |user|
+        tr
+          td.user-item = user.email
+          - if user.admin_flag == false
+            td.user-item = "一般"
+          - else
+            td.user-item = "管理者"
+          - if user.admin_flag == false
+            td.user-item = link_to t('view.user.to administration'), edit_user_path(user.id), class:"user-item__link"
+          - else
+            td.user-item = link_to t('view.user.to general'), edit_user_path(user.id), class:"user-item__link"
+          td.user-item = button_to "delete", user_path(user.id), method: :delete, data: {confirm: "OK?"}
+    .paginater
+      = paginate @users
+
+  - else
+    p = "お探しのユーザーはいません"
