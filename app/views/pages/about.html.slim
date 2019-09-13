@@ -93,6 +93,13 @@ html
         padding: 4px 0
         font-size: 1.3rem
         max-width: 640px
+      .login-link
+        color: #999
+        display: block
+        font-size: 16px
+        margin-top: 30px
+        text-align: center
+        text-decoration: none
       footer
         background-color: #f9f9f9 !important
         text-align: center
@@ -190,6 +197,7 @@ html
             |あなたからのコメントが誰かの励みになります。
     .link-box
       = link_to "登録する", new_user_registration_path, class:"btn btn-regist"
+      = link_to "ログインはこちら", new_user_session_path, class:"login-link"
     footer
       .footer-container
         .footer-list
