@@ -19,7 +19,11 @@ Rails.application.routes.draw do
       get 'search', to: 'users#search'
     end
   end
-  resources :profiles
+  resources :profiles do
+    collection do
+      get 'search', to: 'profiles#search'
+    end
+  end
   resources :posts do
     resources :post_comments, only:[:create, :destroy]
     resources :favorites, only:[:create, :destroy]

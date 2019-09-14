@@ -44,6 +44,11 @@ class ProfilesController < ApplicationController
     redirect_to posts_path
   end
 
+  def search
+    @q = Profile.search(search_params)
+    @profiles = @q.result
+  end
+
   private
   def profile_params
     params.require(:profile).permit(:nickname, :image, :age, :skintype, purpose_ids: [])
@@ -51,5 +56,9 @@ class ProfilesController < ApplicationController
 
   def set_profile
     @profile = Profile.find(params[:id])
+  end
+
+  def search_params
+    params.require(:q).permit(:nickname_cont, :skintype_eq, :age)
   end
 end
