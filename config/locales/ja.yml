@@ -246,6 +246,7 @@ ja:
     get: 検索
     logout: ログアウト
     mypage: マイページ
+    none: 指定しない
     profile:
       nickname: ニックネーム
       icon: アイコン

@@ -2,9 +2,10 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only:[:edit, :update, :show, :destroy]
   before_action :authenticate_user!, only:[:new, :create, :show, :edit, :update, :destroy]
   def index
-    @profiles = Profile.all
+    @profiles = Profile.page(params[:page]).per(10)
+    @purposes = Purpose.all
     @q = Profile.ransack(params[:q])
-    @profiles = @q.result
+    @profiles = @q.result.page(params[:page]).per(10)
   end
 
   def new
@@ -59,6 +60,6 @@ class ProfilesController < ApplicationController
   end
 
   def search_params
-    params.require(:q).permit(:nickname_cont, :skintype_eq, :age)
+    params.require(:q).permit(:nickname_cont, :skintype_eq, :age_eq, :purposes_id_eq)
   end
 end

@@ -272,6 +272,21 @@ form.new_user{
   margin-bottom: 20px;
   text-align: center;
 }
+.search-container__more{
+  margin-top: 20px;
+  padding: 0 8px;
+}
+.form-control__search__more{
+  border: .5px solid #eee;
+  border-radius: 10px;
+  min-width: 280px;
+  padding: 6px 10px;
+  width: 80%;
+}
+.title__more{
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
 /*ここまで*/
 
 /*SNSログインボタン*/
