@@ -1,8 +1,10 @@
 #管理者情報
-User.create!(
+@user = User.create!(
             email: "admin@example.com",
             password: "111111",
-            provider: "",
-            uid: "",
             admin_flag: true
           )
+Profile.create(
+  nickname: "admin",
+  user_id: @user.id
+)
