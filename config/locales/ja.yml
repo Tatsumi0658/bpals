@@ -281,6 +281,7 @@ ja:
       search: 気になる商品を探す
       list: 商品一覧
     post:
+      index: 投稿一覧
       images: 画像
       content: 投稿内容
       new: 新規投稿
